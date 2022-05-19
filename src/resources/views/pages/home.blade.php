@@ -5,28 +5,36 @@
                 <div class="col-md-3">
                     <div class="sidebar-widget">
                         <div class="single-sidebar-widget">
-                            <h4 class="title">Important information.</h4>
-                            <div class="recent-content" style="border: solid 1px aqua">
-                                <ul>
-                                    <li
+                            <h4 class="title">About Research at Luanar.</h4>
+                            {{-- <div class="recent-content" style="border: solid 1px aqua">
+                                 <ul>
+                                     <li
+                                         style="padding: 7px; border-bottom: solid 1px aqua"
+                                         >
 
-                                        style="padding: 7px; border-bottom: solid 1px aqua; background:#2621ff">
+                                         <a href="{{route('home')}}">
+                                             <b> <i class="mdi mdi-chevron-right"></i> About Research</b>
+                                         </a>
 
-{{--                                        <a href="faculty.php?id=">--}}
-                                        <a href="{{route('home')}}">
-                                            <b  style="color: #FFFAFA"> <i class="mdi mdi-chevron-right"></i> About Research</b>
-                                        </a>
+                                     </li>
 
-                                    </li>
+                                     <li style="padding: 7px; border-bottom: solid 1px aqua; background:#2621ff;" ><a href="{{route('publications')}}"><b style="color: #FFFAFA"> <i class="mdi mdi-chevron-right"></i> Publications</b></a></li>
+                                     <li style="padding: 7px; border-bottom: solid 1px aqua"><a href="{{route('datasets')}}"><b> <i class="mdi mdi-chevron-right"></i> Datasets</b></a></li>
+                                     <li style="padding: 7px; border-bottom: solid 1px aqua"><a href="#"><b> <i class="mdi mdi-chevron-right"></i> Patents</b></a></li>
+                                     <li style="padding: 7px; border-bottom: solid 1px aqua"><a href="#"><b> <i class="mdi mdi-chevron-right"></i> Staff</b></a></li>
+                                     <li style="padding: 7px; border-bottom: solid 1px aqua"><a href="#"><b> <i class="mdi mdi-chevron-right"></i> Researchers</b></a></li>
+                                     <li style="padding: 7px; border-bottom: solid 1px aqua"><a href="#"><b> <i class="mdi mdi-chevron-right"></i> Agriculture Directorate</b></a></li>
 
-                                    <li style="padding: 7px; border-bottom: solid 1px aqua"><a href="{{route('publications')}}"><b> <i class="mdi mdi-chevron-right"></i> Publications</b></a></li>
-                                    <li style="padding: 7px; border-bottom: solid 1px aqua"><a href="{{route('datasets')}}"><b> <i class="mdi mdi-chevron-right"></i> Datasets</b></a></li>
-                                    <li style="padding: 7px; border-bottom: solid 1px aqua"><a href="#"><b> <i class="mdi mdi-chevron-right"></i> Patents</b></a></li>
-                                    <li style="padding: 7px; border-bottom: solid 1px aqua"><a href="#"><b> <i class="mdi mdi-chevron-right"></i> Staff</b></a></li>
-                                    <li style="padding: 7px; border-bottom: solid 1px aqua"><a href="#"><b> <i class="mdi mdi-chevron-right"></i> Researchers</b></a></li>
-                                    <li style="padding: 7px; border-bottom: solid 1px aqua"><a href="#"><b> <i class="mdi mdi-chevron-right"></i> Agriculture Directorate</b></a></li>
+                                 </ul>
 
-                                </ul>
+                             </div>--}}
+                            <div class="recent-content-section">
+                                <p><a href="{{route('publications')}}" >Publications</a></p>
+                                <p><a href="{{route('datasets')}}">Datasets</a></p>
+                                <p><a href="#">Patents</a></p>
+                                <p><a href="#">Staff</a></p>
+                                <p><a href="#">Researchers</a></p>
+                                <p><a href="#">Agriculture Directorate</a></p>
                             </div>
                         </div>
                         <div class="single-sidebar-widget">

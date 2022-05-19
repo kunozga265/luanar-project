@@ -173,7 +173,7 @@
 
 /* small mobile :320px. */
 @media (max-width: 767px) {
-    .container {width:300px}
+    .container {width:100%}
     .as-mainwrapper.wrapper-boxed {width:300px}
     .mobile-menu-area {display: block}
     .as-mainwrapper.wrapper-boxed .header-logo-menu.stick {width: 300px;}
@@ -381,7 +381,7 @@
 
 /* Large Mobile :480px. */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-    .container {width:450px}
+    .container {width:100%}
     .single-item {margin: 0 14px 56px; padding: 0 47px;}
     .as-mainwrapper.wrapper-boxed {width:450px}
     .banner-content h1 {

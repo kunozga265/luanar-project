@@ -379,7 +379,7 @@
 
                                                 </ul>
                                             </li>
-                                            <li><a href="#">Research & Outreach</a></li>
+                                            <li><a href="{{route('home')}}">Research & Outreach</a></li>
                                             <li><a href="#">Library</a></li>
                                             <li><a href="#" target = "blank"><i class="fa fa-facebook"></i></a></li>
                                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>

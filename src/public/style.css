@@ -2631,3 +2631,96 @@ span.c-text {display: inline-block;}
 .block.padding .btn-group {margin-bottom: 22px;}
 .btn-toolbar.padding {margin-bottom: 20px;}
 .btn-toolbar.padding:nth-last-of-type(1) {margin-bottom: 0;}
+
+/*
+    Added
+*/
+.listing{
+    padding: 40px 40px
+}
+
+.listing ul{
+    padding-left: 20px;
+    margin-bottom: 24px
+}
+
+.listing ul li{
+    list-style: disc
+}
+
+.filter{
+    padding: 20px 0
+}
+
+.filter h4{
+    color: #98a560;
+}
+
+.filter p{
+    margin: 8px 0;
+}
+
+.filter p a{
+    font-weight: bolder;
+    color: #2e86ac;
+}
+
+.filter p.show-more{
+    font-size: 12px;
+    text-align: right;
+}
+
+.filter p a:hover, .recent-content-section p a:hover, .recent-content-section p a.active{
+    color: #03a100;
+}
+.recent-content-section p a{
+    font-size: 16px;
+    padding: 0;
+    color: #2e86ac;
+    font-weight: bolder;
+}
+
+.searchSection{
+    padding: 40px 40px
+}
+
+.searchSection h4{
+    color: #98a560;
+}
+
+.searchSection .search-field{
+    margin-top: 16px
+}
+
+.searchSection .search-field label{
+    margin-bottom: 8px
+}
+
+.searchSection .search-field .field{
+    position: relative
+}
+
+.searchSection .search-field .field i{
+    position: absolute;
+    right: 5px;
+    color: #98a560;
+    font-size: 16px;
+    z-index: 1;
+    padding: 8px;
+}
+
+.searchSection .search-field .field input{
+    position: relative;
+    padding-right: 35px;
+}
+
+.searchSection .search-filters{
+    margin-top: 16px
+}
+
+.searchSection .search-filters label,
+.searchSection .search-filters input,
+.searchSection .search-filters select{
+    margin-bottom: 16px
+}
+
