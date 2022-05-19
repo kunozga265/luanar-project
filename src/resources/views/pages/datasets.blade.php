@@ -134,50 +134,476 @@
                             <div class="single-event-text" style="padding:0; background-color: white">
 
                                 <div class="listing">
-                                    <p>All past and present publications from research and projects funded by CABMACC or any through PCO, can be accessed from this page.</p>
-                                    <p>
-                                        <b>Progress reports for CABMACC and Infrastructure Programmes (IDP)</b>
-                                    </p>
-                                    <ul>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/IDP%20Progress%20Report%20for%202017%20to%202018%20Revised%2018.08.2018.pdf">IDP Progress Report for 2017 to 2018 Revised 18.08.2018</a></li>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/2016%20-%2017%20Progress%20Report%20for%20IDP.pdf">2016 - 17 Progress Report for IDP</a></li>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/2016-17%20Progress%20report%20for%20CABMACC.pdf">2016-17 Progress report for CABMACC</a></li>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/CABMACC%20Progress%20Report%2025%20Sept%202016.pdf">CABMACC Progress Report 25 Sept 2016</a></li>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/2015%20IDP%20Annual%20Progress%20Report%20-%20Final%20submitted%20to%20RNE%20-%2017%20Aug%202015.pdf">2015 IDP Annual Progress Report - Final submitted to RNE - 17 Aug 2015</a></li>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/CABMACC%20Annual%20Progress%20Report%202014-15%20Final%20050815.pdf">CABMACC Annual Progress Report 2014-15 Final 050815</a></li>
+                                    <p style="text-align: justify">LUANAR’s AquaFish ACE supports cutting edge research for students, staff and partners involved in the ACE II Project. AquaFish has put in place a research agenda which guides the growth and development of ACE II innovative research approaches.<br></p>
 
-                                    </ul>
+                                    <p style="text-align: justify">The AquaFish center facilitates and promotes community action research, and strengthens linkages with the private sector in the region while increasing females and youth participation</p><br>
+                                    <p style="text-align: justify">The center has trained students, faculty and farmers through employing innovative, entrepreneurial and multidisciplinary approaches to training, research and outreach on production, value addition and fisheries management, through strategic south-south and north-south partnerships with advanced knowledge institutions and other higher education stakeholders.</p><br>
 
-                                    <p>Articles</p>
-                                    <ul>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/Tapp%20Newsletter.pdf">Tapp Newsletter (January-March,2016)</a></li>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/MAJANDS%20Vol%201%20Issue%201.pdf">MAJANDS Vol 1 Issue 1 (1 December 2015)</a></li>
-                                    </ul>
+                                    <h3>ACE AQUAFISH PUBLICATIONS</h3>
+                                    <ol>
+                                        <li>
+                                            <p><b>1 .  </b>Elias Rabson Chirwa , Limbikani Chilima (2018 ) Use of benthic macroinverterbrate indices as bio-indicators of ecosystem healtha for the detection of degraded landscapes in malawi .International Journal of Agriculture, Forestry and Fisheries (  <a href="http://www.openscienceonline.com/journal/ijaff">http://www.openscienceonline.com/journal/ijaff )</a></p>
+                                            <hr>
+                                        </li>
 
-                                    <p>
-                                        <b>Articles/publications by PhD/MSc students sponsored by CABMACC Programme.</b>
-                                    </p>
-                                    <ul>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/Cleaner%20Cooking%20Camp%202018%20pptx.pdf"><b>Experencia Madalitso Jalasi (2018) - presentation:</b> Investigating and Expanding Learning across  Activity System Boundaries in Improved Cook Stove  Innovation Diffusion and Adoption in Malawi</a></li>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/Experencia%20Jalasi%20final%20thesis.pdf"><b>Experencia Madalitso Jalasi (2018) - Dissertation</b>:  Investigating and Expanding Learning across  Activity System Boundaries in Improved Cook Stove  Innovation Diffusion and Adoption in Malawi </a></li>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/Geresomu%20Targeted%20Training%20Paper.pdf">Geresomo, et al  (2018): Targeting caregivers with context specific behavior change training </a></li>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/Kabambe%20-%20Productivity%20of%20pigeon%20pea%20and%20maize%20rotation%20system.pdf">Kabambe, et al(2018): Productivity of pigeon pea and maize rotation system in Balaka District</a></li>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/Kabambe%20-%20Productivity%20and%20profitability%20on%20groundnut%20and%20maize.pdf">Kabambe, et al(2018) : Productivity and profitability on groundnut and maize</a></li>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/Makwiza_Dissertation%20-%20Estimating%20outdoor%20water%20use%20allowing%20for%20the%20possible%20impacts%20of%20climate%20change.pdf"> Makwiza (2018) - Dissertation : Estimating outdoor water use allowing for the possible impacts of climate change </a></li>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/Makwiza%20-%20Estimating%20the%20impact%20of%20climate%20change.pdf">Makwiza, et al (2018)- Estimating the impact of climate change on residential water use using panel data analysis</a></li>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/Donga%20-%20Environmental%20load%20of%20pesticides%20used%20in%20conventional%20sugarcane%20production%20in%20Malawi%20(2018).pdf">Donga and Eklo (2018): Environmental load of pesticides used in conventional sugarcane production in Malawi</a></li>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/Limuwa%20-%20A%20GENDERED%20PERSPECTIVE%20ON%20THE%20FISH%20VALUE%20CHAIN.pdf">Limuwa (2018): A Gendered perspective on the fish value chain, livelihood patterns and coping strategies.</a></li>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/Limuwa%20et%20al.%202018%20-%20Evaluation%20of%20Small-Scale%20Fishers%E2%80%99%20Perceptions%20on%20Climate%20Change.pdf">Limuwa, et al. (2018): Evaluation of Small-Scale Fishers’ Perceptions on Climate Change and Their Coping Strategies.</a></li>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/Limuwa%20-%20sustainability%20fish%20farming.pdf">Limuwa, et al (2018): Is Fish Farming an Illusion for Lake Malawi Riparian Communities under Environmental Changes&#63;</a></li>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/Geresomu%20Riskfactors%20of%20stunting.pdf">Geresomo, et al (2017): Riskfactors of stunting</a></li>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/Geresomu%20Factors%20Affecting%20child%20feeding.pdf">Geresomo (2017) : Factors affecting child feeding</a></li>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/Makwiza%20-%20Sound%20recording%20to%20characterize%20outdoor%20tap%20water%20use%20events.pdf">Makwiza and Jacobs (2017) - Sound recording to characterize outdoor tap water use events </a></li>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/Makwiza%20-%20Assessing%20the%20impact%20of%20propertysizeon%20residential%20water.pdf">Makwiza and Jacobs (2016) - Assessing the impact of propertysizeon residential water use</a></li>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/Searching%20for%20Sustainable%20%20Solutions%20in%20Cook%20Stove%20Practice%20in%20Malawi%20%20A%20Cultural%20Historical%20Activity%20Theory%20Approach.pdf">Chisoni (2016): Searching for sustainable solutions in improved cookstove practice in Malawi</a></li>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/Makwiza%20-%20Correlating%20sound%20and%20flow%20rate%20at%20a%20tap.pdf">Makwiza, et al (2015) - Correlating sound and flow rate at a tap</a></li>
-                                        <li><a href="https://luanar.ac.mw/pco2/downloads/Makwiza%20-%20assess%20the%20possible%20impacts%20of%20climate%20change%20on%20domestic%20irrigation%20water%20use.pdf">Makwiza, et al (2015) - assess the possible impacts of climate change on domestic irrigation water use</a></li>
+                                        <li>
+                                            <p><b>2 .  </b>Camerson Donald Ng'ambi , Prakash Patil, Satish Rama Poojary, AbhimanBallyaya, Naveen Kumar Thammegouda, Ramesh Kashi Srinivasayya (2018 ) Skim milk flocculation concentrates white spot syndrom virus in seawater for the detections using a monocional antibody base flow-through assay .International Journal of Poultry and Fisheries Sciences (  <a href="?https://symbiosisonlinepublishing.com/poultry-fisheries-science/">?https://symbiosisonlinepublishing.com/poultry-fisheries-science/ )</a></p>
+                                            <hr>
+                                        </li>
 
-                                    </ul>
+                                        <li>
+                                            <p><b>3 .  </b>Jeremiah  Kang'ombe , Jane Yatuha, J Rutaisire, L Chapman,, D Sikawa (2018 ) Reproductive strategies of smooth-head catfish Clarias liocephalus (Boulenger,1898), in the Rwizi-Rufuha wetland system,south-western Uganda .African Journal of Aquatic Science (  <a href="https://doi.org/10.2989/16085914.2018.1470082">https://doi.org/10.2989/16085914.2018.1470082 )</a></p>
+                                            <hr>
+                                        </li>
+
+                                        <li>
+                                            <p><b>4 .  </b>Mose Majid Limuwa , Wales Singini, Trond Storebakken (2018 ) Is Fish Farming an Illusion for Lake Malawi Riparian Communities under Environmental Changes. .Sustainability (  <a href="doi:10.3390/su1005145">doi:10.3390/su1005145 )</a></p>
+                                            <hr>
+                                        </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>5 .  </b>Bonface Nankwenya , M. Alexander R Phiri, Abdi Khalil Edriss, Emmanuel Kaunda, Horace Phiri, Sloans Chimatiro (2018 ) Determinats of Fish Tade Flows in Africa .Journal of Sustainable Development (  <a href="https://doi.org/10.5539/jsd.v11n3p123">https://doi.org/10.5539/jsd.v11n3p123 )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>6 .  </b>Wislon  Lazaro Jere , Mohsen Abdel- Tawwab, Chloe Kemigabo, Daniel Sikawa, Charles Masembe, Jeremiah Kang'ombe (2018 ) Combined effect of dietary protein and phytase levels on growth perfomance,feed utilization, and nutrients digestibility of African catfish, Clarias gariepinus (B.),reared in earthen ponds .Journal of Applied Aquaculture (  <a href="https://doi.org/10.1080/10454438.2018.1439425">https://doi.org/10.1080/10454438.2018.1439425 )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>7 .  </b>Daud Kassam, , Mireku K.K., Wisdom Changadeya and F.Y.K. Attipoe (2017 ) Characterization of the production and dissemination systems of Nile Tilapia in some coastal communities in Ghana. .Sustainable Agriculture Research (  <a href="DOI: 10.5539/sarv7n1p14.">DOI: 10.5539/sarv7n1p14. )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>8 .  </b>Francis Maguza-Tembo , Abdi-Khalil Edriss, Julius Mangisoni and Kenamu (2017 ) Adoption determinants of multiple climate change adaptation strategies in Southern Malawi: An ordered probit analysis. .Journal of Development and Agricultural Economics (  <a href="https://pdfs.semanticscholar.org/3f60/d3b0c43440ebb0a5029dabd15c0cdd077a19.pdf">https://pdfs.semanticscholar.org/3f60/d3b0c43440ebb0a5029dabd15c0cdd077a19.pdf )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>9 .  </b>Francis Maguza-Tembo , Abdi-Khalil Edriss, Julius Mangisoni (2017 ) Determinants of Climate Smart Agriculture Technology Adoption in the Drought Prone Districts of Malawi using a Multivariate Probit Analysis. .Asian Journal of Agricultural Extension, Economics & Sociology (  <a href="http://www.sciencedomain.org/download/MTg1NzBAQHBm.pdf">http://www.sciencedomain.org/download/MTg1NzBAQHBm.pdf )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>10 .  </b>Jeremiah Kang'ombe, , Chloe Kemigabo, Wilson Jere, Daniel Sikawa, Tefula Moses Dhikusooka and Charles Masembe` (2017 ) Effect of toasting on phytic acid, protein and pH in a plant-based diet and its ingesta in fed catfish. .African Journal of Rural Development (  <a href="http://www.afjrd.org/jos/index.php/afjrd/article/view/222">http://www.afjrd.org/jos/index.php/afjrd/article/view/222 )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>11 .  </b>Jeremiah Kang?ombe , Chloe Kemigabo,  Charles Masembe Wilson Jere and Daniel Sikawa (2017 ) Effects of protease enzyme supplementation on protein digestibility of legume and/or fish meal-based fish feeds.  DOI: 10.5897/IJFA2017.0620. .International Journal of Fisheries and Aquaculture. (  <a href="http://www.academicjournals.org/journal/IJFA/article-full-text-pdf/12EF10E65301">http://www.academicjournals.org/journal/IJFA/article-full-text-pdf/12EF10E65301 )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>12 .  </b>Daud Kassam, , Mireku K.K., Wisdom Changadeya, F.Y.K. Attipoe and C.A. Ardinotey (2017 ) Assessment of genetic variations of Nile Tilapia (Oreochromis niloticus) in the Volta Lake of Ghana using microsatellite markers. .African Journal of Biotechnology (  <a href="http://www.academicjournals.org/journal/AJB/article-abstract/1CA06B062784">http://www.academicjournals.org/journal/AJB/article-abstract/1CA06B062784 )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>13 .  </b>J. Kang'ombe, , Mosha, S.S. , W. Jere and N. Madalla (2017 ) Effect of organic and inorganic fertilizers on natural food composition and performance of African catfish fry produced under artificial propagation. .Africa Journal of Rural Development (  <a href="http://www.afjrd.org/jos/index.php/afjrd/article/view/200/65">http://www.afjrd.org/jos/index.php/afjrd/article/view/200/65 )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>14 .  </b>Daniel Sikawa , Neverson Msusa, Fanuel Kapute, Austin Mtethiwa and Jeremy Likongwe (2017 ) Effect of processing method on proximate composition of gutted fresh Mcheni (Rhamphochromis species) (Pisces: Cichlidae) from Lake Malawi.   Issue 4 - .International Food Research Journal (  <a href="http://www.ifrj.upm.edu.my/24%20(04)%202017/(23).pdf">http://www.ifrj.upm.edu.my/24%20(04)%202017/(23).pdf )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>15 .  </b>Chonde, C , Njera, D., Kambewa, D., Dzanja, J., Kayambazinthu, D and Kaunda, E. (2017 ) Institutional Environment Affecting Capacity of Fish Farmer Organisations in Dowa and Mchinji Districts in Central Malawi. .Journal of Agricultural Economics, Extension and Rural Development (  <a href="http://www.springjournals.net/full-articles/springjournals.netjaeerdarticlesindex=13njeraetal.pdf?view=inline">http://www.springjournals.net/full-articles/springjournals.netjaeerdarticlesindex=13njeraetal.pdf?view=inline )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>16 .  </b>Chonde, C, , Njera, D., Kambewa, D., Dzanja, J., Kayambazinthu, D. (2017 ) Examining the Significance of Gender, Marital Status, Landholding Size and Age of Members on Capacity of Local Level Fish Farmer Organisations. .International Journal of Natural Resource Ecology and Management (  <a href="http://article.sciencepublishinggroup.com/pdf/10.11648.j.ijnrem.20170204.12.pdf">http://article.sciencepublishinggroup.com/pdf/10.11648.j.ijnrem.20170204.12.pdf )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>17 .  </b>E. Kaunda , Singini, W., V. Kasulo and W. Jere. (2017 ) Factors influencing intertemporal preference of fisheries resource users of Lake Malombe in Malawi. .Malawi Journal of Agriculture, Natural Resources and Development Studies (  <a href="https://www.researchgate.net/profile/Kumbukani_Mzengereza/publication/319114864_proximate_analysis_of_freshly_caught_chambo_from_chia_lagoon/links/59924936a6fdcc53b79b692e/proximate-analysis-of-freshl">https://www.researchgate.net/profile/Kumbukani_Mzengereza/publication )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>18 .  </b>Happy Mussa , Emmanuel Kaunda, Sloans Chimatiro, Keagan Kakwasha, Lisungu Banda, Bonface Namkwenya, Jabulani Nyengere (2017 ) Assessment of Informal Cross-Boarder Fish Trade in the Southern Africa Region: A case of Malawi and Zambia .Journal of Agricultural Science and Technology (  <a href="doi:  10.17265/2161-6264/2017.05.009">doi:  10.17265/2161-6264/2017.05.009 )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>19 .  </b>Wison Jere, , Chloe Kemigabo, Daniel Sikawa, Jeremiah Kang ombe, Charles Masembe (2017 ) Apparent Digestibility and Utilization of Protein and Phosphorus in diets of incorporated with Sprouted Sorghum, Phytase and Protease Enzymes for African Catfish (Clarias gariepinus) .International Journal of Fisheries and Aquaculture (  <a href="http://doi.org/10.17352/2455-8400.000033">http://doi.org/10.17352/2455-8400.000033 )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>20 .  </b>Daud Kassam , Elysee Nzohabonayo amd Jeremiah Kang?ombe. (2017 ) Effect of lipid levels on reproductive performance of Oreochromis karongae (Trewavas 1941). .Aquaculture Research (  <a href="https://doi.org/10.1016/j.ejar.2017.07.002">https://doi.org/10.1016/j.ejar.2017.07.002 )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>21 .  </b>Daud Kassam , Elysee Nzohabonayo and Jeremiah Kang?ombe. (2017 ) Effect of hybridisation on   fecundity of Oreochromis karongae (Trewavas 1941) .Egyptian Journal of Aquatic Research. (  <a href="https://doi.org/10.1016/j.ejar.2017.07.002">https://doi.org/10.1016/j.ejar.2017.07.002 )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>22 .  </b>Daud Kassam , Wisdom Changadeya, Hamad Stema, Wilson Jere, Emmanuel Kaunda (2017 ) Genetic and morphological differentiation among mpasa (Opsaridium microlepis G?nther, 1864), populations from inflow rivers of Lake Malawi. International Journal of Fisheries and Aquaculture .International Journal of Fisheries and Aquaculture (  <a href="https://www.researchgate.net/profile/Wisdom_Changadeya/publication/317379671_International_Journal_of_Fisheries_and_Aquaculture_Morphological_and_genetic_variability_among_Mpasa_Opsaridium_microlepis_">https://www.researchgate.net/profile/Wisdom_Changadeya/publication )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>23 .  </b>Daud Kassam , Elias Chirwa, Wilson Jere, Austin Mtethiwa (2017 ) A review of the farming of common carp (Cyprinus carpio L.) in Malawi. Policy research directions for aquaculture development in Malawi .International Journal of Fisheries and Aquaculture (  <a href="http://www.academicjournals.org/journal/IJFA/article-full-text-pdf/C8E668564577">http://www.academicjournals.org/journal/IJFA/article-full-text-pdf/C8E668564577 )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>24 .  </b>Boniface Nakwenya , Emmanule Kaunda and Sloans Chimatiro (2017 ) The demand for fish products in Malawi: An Almost Ideal Demand System Estimation. Journal of Economics and Sustainable Development .Journal of Economics and Sustainable Development (  <a href="http://www.iiste.org/Journals/index.php/JEDS/article/view/38380">http://www.iiste.org/Journals/index.php/JEDS/article/view/38380 )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>25 .  </b>Priscilla Longwe , Fanuel Kapute (2016 ) Nutritional Composition of Smoked and Sun dried Pond raised Oreochromis karongae (Trewavas, 1941) and Tilapia rendalli (Boulenger, 1896) .American Journal of Food and Nutrition (  <a href="http://pubs.sciepub.com/ajfn/4/6/3/index.html">http://pubs.sciepub.com/ajfn/4/6/3/index.html )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>26 .  </b>Francis Maguza-Tembo , Edwin Kenamu, (2016 ) Drivers of adoption and intensity of adoption of goat Farming in Southern Malawi .Journal of Economics and Sustainable Development (  <a href="http://iiste.org/Journals/index.php/JEDS/article/view/31991/33019">http://iiste.org/Journals/index.php/JEDS/article/view/31991/33019 )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>27 .  </b>Daud Kassam , Marcus Sangazi (2016 ) Comparative growth performance between Oreochromis hybrids and selectively-bred strain (F8) in Malawi .Sustainable Agriculture Research (  <a href="doi:10.5539/sar.v5n4p13.">doi:10.5539/sar.v5n4p13. )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>28 .  </b>Jeremiah Kang'ombe , Joshua Valeta, Fanuel Kapute, Nagoli Joseph, David Mbamba (2016 ) Growth performance of three tilapia fish species raised at varied pond sizes and water depths .International Journal of Fisheries and Aquaculture (  <a href="http://www.academicjournals.org/IJFA">http://www.academicjournals.org/IJFA )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>29 .  </b>Joshua Valeta , Fanuel Kapute, Chisomo Goliati (2016 ) Effect of Prolonged Storage in Ice on Nutrient Composition and Sensory Quality of Whole Fresh Pond Raised Tilapia Fish (Oreochromis shiranus) .American Journal of Food and Nutrition (  <a href="http://pubs.sciepub.com/ajfn/4/5/">http://pubs.sciepub.com/ajfn/4/5/ )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>30 .  </b>Francis Maguza-Tembo , Edriss A.K., Mangisoni J. and Mkwambisi D (2016 ) Does adoption of Climate Smart Agriculture (CSA) Technologies reduce household vulnerability to poverty? .Journal of Economics and Sustainable Development (  <a href="http://iiste.org/Journals/index.php/JEDS/article/view/34164">http://iiste.org/Journals/index.php/JEDS/article/view/34164 )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>31 .  </b>Francis Maguza-Tembo , Abdi-Khalil Edriss, Julius Mangisoni and David Mkwambisi (2016 ) Impact of soil and water conservation improvement on the welfare of smallholder farmers in Southern Malawi .Journal of Economics and Sustainable Development (  <a href="http://www.iiste.org/Journals/index.php/JEDS/article/view/34182">http://www.iiste.org/Journals/index.php/JEDS/article/view/34182 )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>32 .  </b>Daniel Sikawa , Neverson Msusa,  Fanuel Kapute, Jeremy Likongwe, Austin Mtethiwwa (2016 ) Effect of sun-drying, smoking and salting on proximate composition of fresh. fillets of Mcheni (. Rhamphochromis. species - Pisces: Cichlidae) from Lake Malawi .International Journal of Aquaculture (  <a href="http://biopublisher.ca/index.php/ija/article/html/2585/">http://biopublisher.ca/index.php/ija/article/html/2585/ )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>33 .  </b>Wilson Jere , Mexford Mulumpwa, Austin Mtethiwa, Tasokwa Kakota, Jeremiah Kang'ombe (2016 ) Application of forecasting in determining efficiency of fisheries management strategies of artisanal Labeo mesops fishery of Lake Malawi .International Journal of Scientific and Technology Research (  <a href="http://www.ijstr.org/final-print/sep2016/Application-Of-Forecasting-In-Determining-Efficiency-Of-Fisheries-Management-Strategies-Of-Artisanal-Labeo-Mesops-Fishery-Of-Lake-Malawi.pdf">http://www.ijstr.org/final-print/sep2016/Application-Of-Forecasting-In-Determining-Efficiency-Of-Fisheries-Management-Strategies-Of-Artisanal-Labeo-Mesops-Fishery-Of-Lake-Malawi.pdf )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>34 .  </b>Emmanuel Kaunda , Dalo Njera, Daimon Kambewa, Charity Chonde, Dennis Kayambazinthu, (2016 ) Local Community Perspective about Challenges Affecting Farmer Organizations. Case of Selected Socioeconomic Characteristics of Members in Fish Farmer Organizations in Central Malawi .International Journal of Research in Agriculture and Forestry (  <a href="http://www.ijraf.org/papers/v3-i12/1.pdf">http://www.ijraf.org/papers/v3-i12/1.pdf )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>35 .  </b>Emmanuel Kaunda , Dalo Njera, Daimon Kambewa, Charity Chonde, Dennis Kayambazinthu, (2016 ) What Influences Capacity of Fish Farmer Organizations? Experiences of CARP Fish Farmer Organizations in Dowa and Mchinji District in Central Malawi .Modern Agricultural Science and Technology (  <a href="http://www.academicstar.us/UploadFile/Picture/2017-3/20173273458784.pdf">http://www.academicstar.us/UploadFile/Picture/2017-3/20173273458784.pdf )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>36 .  </b>Joseph Dzanja , Dalo Njera, Daimon Kambewa, Charity Chonde, Dennis Kayambazinthu,  Emmanuel Kaunda, Lisungu Moyo, Msekiwa Matsimbe, and  C. German and Msandu (2016 ) Member-Specific Characteristics Affecting Capacity of Farmer organisations in Promoting Fish Farming: Case of Dowa and Mchinji Districts in Malawi. .International Journal of Research in Agriculture and Forestry (  <a href="http://www.ijraf.org/papers/v3-i11/2.pdf">http://www.ijraf.org/papers/v3-i11/2.pdf )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>37 .  </b>Joshua Valeta , Jeremy Likongwe, Daud Kassam, D. Maluwa, Brino Chirwa (2016 ) Assessment of Apparent Effectiveness of Chemical Egg Disinfectants for Improved Artificial Hatching in Oreochromis karongae (Pisces: Cichlidae) .African Journal of Food, Agriculture, Nutrition and Development (  <a href="https://www.ajol.info/index.php/ajfand/article/view/149211">https://www.ajol.info/index.php/ajfand/article/view/149211 )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+
+
+
+                                        <li>
+
+
+
+                                                <p><b>38 .  </b>Apatsa Pearson Chilewa , Daud Kassam and Chiwanda V.J.M (2016 ) Assessment of growth and survival rates of African Catfish (Clarias gariepinus BURCHELL 1852) fry fed on soybean milk-based diets. International Journal of Aquaculture .International Journal of Aquaculture (  <a href="doi:10.5376/ija.2016.06.007">doi:10.5376/ija.2016.06.007 )</a></p>
+
+                                                <hr>
+
+                                            </li>
+
+                                    </ol>
                                 </div>
 
                             </div>

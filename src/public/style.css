@@ -2639,8 +2639,8 @@ span.c-text {display: inline-block;}
     padding: 40px 40px
 }
 
-.listing ul{
-    padding-left: 20px;
+.listing ul, .listing ol{
+    padding: 20px;
     margin-bottom: 24px
 }
 
