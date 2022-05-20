@@ -139,7 +139,7 @@
                                     <p style="text-align: justify">The AquaFish center facilitates and promotes community action research, and strengthens linkages with the private sector in the region while increasing females and youth participation</p><br>
                                     <p style="text-align: justify">The center has trained students, faculty and farmers through employing innovative, entrepreneurial and multidisciplinary approaches to training, research and outreach on production, value addition and fisheries management, through strategic south-south and north-south partnerships with advanced knowledge institutions and other higher education stakeholders.</p><br>
 
-                                    <h3>ACE AQUAFISH PUBLICATIONS</h3>
+                                    <h3 style="margin-bottom: 20px">ACE AQUAFISH PUBLICATIONS</h3>
                                     <ol>
                                         <li>
                                             <p><b>1 .  </b>Elias Rabson Chirwa , Limbikani Chilima (2018 ) Use of benthic macroinverterbrate indices as bio-indicators of ecosystem healtha for the detection of degraded landscapes in malawi .International Journal of Agriculture, Forestry and Fisheries (  <a href="http://www.openscienceonline.com/journal/ijaff">http://www.openscienceonline.com/journal/ijaff )</a></p>

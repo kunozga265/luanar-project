@@ -2640,7 +2640,7 @@ span.c-text {display: inline-block;}
 }
 
 .listing ul, .listing ol{
-    padding: 20px;
+    padding-left: 20px;
     margin-bottom: 24px
 }
 
