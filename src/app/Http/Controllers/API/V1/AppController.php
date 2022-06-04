@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
 
 class AppController extends Controller
 {
-    public $paginate=10;
+    public $paginate=30;
     /**
      * Upload image
      *
@@ -68,7 +68,7 @@ class AppController extends Controller
                 //If none existent add a new entry of the keyword
                 if (!is_object($keywordDb)){
                     $keywordDb=Keyword::create([
-                        'name'   => $keyword,
+                        'name'   => ucwords($keyword),
                         'slug'   => $slug
                     ]);
                 }

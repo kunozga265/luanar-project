@@ -62,7 +62,7 @@ class AuthorController extends Controller
             'lastName'      =>  'required',
         ])->validate();
 
-        $slug=Str::slug($request->firstName. "-" . $request->lastName);
+        $slug="avatars/".Str::slug($request->firstName. "-" . $request->lastName);
         $avatar=isset($request->avatar)? (new AppController)->uploadFile($slug,$request->avatar) : "images/avatar.png";
 
         $author=Author::create([
@@ -121,7 +121,7 @@ class AuthorController extends Controller
                     Storage::disk("public_uploads")->delete($author->avatar);
                 }
 
-                $slug=Str::slug($request->firstName. "-" . $request->lastName);
+                $slug="avatars/".Str::slug($request->firstName. "-" . $request->lastName);
                 $avatar=(new AppController)->uploadFile($slug,$request->avatar);
                 $author->update([
                     "avatar" => $avatar

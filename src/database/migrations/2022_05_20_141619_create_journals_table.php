@@ -15,7 +15,7 @@ class CreateJournalsTable extends Migration
     {
         Schema::create('journals', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->text('title');
             $table->string('volume')->nullable();
             $table->timestamp('deleted_at')->nullable();
             $table->timestamps();

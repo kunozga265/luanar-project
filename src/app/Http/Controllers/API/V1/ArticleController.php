@@ -63,7 +63,7 @@ class ArticleController extends Controller
             'file'      =>  'required',
         ])->validate();
 
-        $slug=Str::slug($request->title).date("-Y-m-d");
+        $slug="articles/".Str::slug($request->title).date("-Y-m-d");
         $file=(new AppController)->uploadFile($slug,$request->file);
 
         $article=Article::create([
@@ -128,7 +128,7 @@ class ArticleController extends Controller
                     Storage::disk("public_uploads")->delete($article->file);
                 }
 
-                $slug=Str::slug($request->title).date("-Y-m-d");
+                $slug="articles/".Str::slug($request->title).date("-Y-m-d");
                 $file=(new AppController)->uploadFile($slug,$request->file);
                 $article->update([
                     "file" => $file

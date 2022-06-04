@@ -15,7 +15,7 @@ class CreateDatasetsTable extends Migration
     {
         Schema::create('datasets', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->text('title');
             $table->string('year')->nullable();
             $table->text('abstract')->nullable();
             $table->string('file');

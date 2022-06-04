@@ -63,7 +63,7 @@ class DatasetController extends Controller
             'file'      =>  'required',
         ])->validate();
 
-        $slug=Str::slug($request->title).date("-Y-m-d");
+        $slug="datasets/".Str::slug($request->title).date("-Y-m-d");
         $file=(new AppController)->uploadFile($slug,$request->file);
 
         $dataset=Dataset::create([
@@ -128,7 +128,7 @@ class DatasetController extends Controller
                     Storage::disk("public_uploads")->delete($dataset->file);
                 }
 
-                $slug=Str::slug($request->title).date("-Y-m-d");
+                $slug="datasets/".Str::slug($request->title).date("-Y-m-d");
                 $file=(new AppController)->uploadFile($slug,$request->file);
                 $dataset->update([
                     "file" => $file
