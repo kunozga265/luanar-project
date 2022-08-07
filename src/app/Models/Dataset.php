@@ -23,6 +23,11 @@ class Dataset extends Model
         return $this->belongsTo(Journal::class);
     }
 
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
+
     public function keywords()
     {
         return $this->belongsToMany(Keyword::class,'dataset_keyword','dataset_id','keyword_id');
@@ -30,6 +35,8 @@ class Dataset extends Model
 
     protected $fillable=[
         'title',
+        'month',
+        'type_id',
         'year',
         'abstract',
         'downloadCount',

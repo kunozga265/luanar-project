@@ -23,6 +23,11 @@ class Article extends Model
         return $this->belongsTo(Journal::class);
     }
 
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
+
     public function keywords()
     {
         return $this->belongsToMany(Keyword::class,'article_keyword','article_id','keyword_id');
@@ -31,6 +36,8 @@ class Article extends Model
     protected $fillable=[
         'title',
         'year',
+        'month',
+        'type_id',
         'abstract',
         'downloadCount',
         'file',

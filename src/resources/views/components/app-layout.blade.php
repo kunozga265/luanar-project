@@ -12,7 +12,7 @@
 
     <!-- favicon
     ============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/luanarsmalllogo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/luanarsmalllogo.png')}}">
 
 
     <!-- Google Fonts
@@ -23,76 +23,76 @@
 
     <!-- Bootstrap CSS
     ============================================ -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
 
     <!-- Bootstrap Datatables
     ============================================ -->
-    <link rel="stylesheet" href="css/lib/datatable/dataTables.bootstrap.min.css">
-{{--    <link rel="stylesheet" href="css/normalize.css">--}}
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/themify-icons.css">
-{{--    <link rel="stylesheet" href="css/flag-icon.min.css">--}}
-{{--    <link rel="stylesheet" href="css/cs-skin-elastic.css">--}}
-    <link rel="stylesheet" href="css/lib/datatable/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('css/lib/datatable/dataTables.bootstrap.min.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('css/normalize.css')}}">--}}
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/themify-icons.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('css/flag-icon.min.css')}}">--}}
+{{--    <link rel="stylesheet" href="{{asset('css/cs-skin-elastic.css')}}">--}}
+    <link rel="stylesheet" href="{{asset('css/lib/datatable/dataTables.bootstrap.min.css')}}">
 
     <!-- Color Swithcer CSS
     ============================================ -->
-    <link rel="stylesheet" href="css/color-switcher.css">
+    <link rel="stylesheet" href="{{asset('css/color-switcher.css')}}">
 
     <!-- Fontawsome CSS
     ============================================ -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
 
     <!-- Owl Carousel CSS
     ============================================ -->
-    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}">
 
     <!-- jquery-ui CSS
     ============================================ -->
-    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="{{asset('css/jquery-ui.css')}}">
 
     <!-- Meanmenu CSS
     ============================================ -->
-    <link rel="stylesheet" href="css/meanmenu.min.css">
+    <link rel="stylesheet" href="{{asset('css/meanmenu.min.css')}}">
 
     <!-- Animate CSS
     ============================================ -->
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="{{asset('css/animate.css')}}">
 
     <!-- Animated Headlines CSS
     ============================================ -->
-    <link rel="stylesheet" href="css/animated-headlines.css">
+    <link rel="stylesheet" href="{{asset('css/animated-headlines.css')}}">
 
     <!-- Nivo slider CSS
     ============================================ -->
-    <link rel="stylesheet" href="lib/nivo-slider/css/nivo-slider.css" type="text/css" />
-    <link rel="stylesheet" href="lib/nivo-slider/css/preview.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{asset('lib/nivo-slider/css/nivo-slider.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{asset('lib/nivo-slider/css/preview.css')}}" type="text/css" media="screen" />
 
     <!-- Metarial Iconic Font CSS
     ============================================ -->
-    <link rel="stylesheet" href="css/material-design-iconic-font.css">
-    <link rel="stylesheet" href="css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="{{asset('css/material-design-iconic-font.css')}}">
+    <link rel="stylesheet" href="{{asset('css/material-design-iconic-font.min.css')}}">
 
     <!-- Slick CSS
     ============================================ -->
-    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="{{asset('css/slick.css')}}">
 
     <!-- Video CSS
     ============================================ -->
-    <link rel="stylesheet" href="css/jquery.mb.YTPlayer.css">
+    <link rel="stylesheet" href="{{asset('css/jquery.mb.YTPlayer.css')}}">
 
     <!-- Style CSS
     ============================================ -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{asset('style.css')}}">
 
     <!-- Color CSS
     ============================================ -->
-    <link rel="stylesheet" href="css/color.css">
+    <link rel="stylesheet" href="{{asset('css/color.css')}}">
 
     <!-- Custom CSS
     ============================================ -->
-{{--    <link rel="stylesheet" href="css/mycss">--}}
+{{--    <link rel="stylesheet" href="{{asset('css/mycss">--}}
 
     <style>
         table {
@@ -190,35 +190,35 @@
     </style>
     <!-- Responsive CSS
     ============================================ -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
 
     <!-- Modernizr JS
     ============================================ -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="{{asset('js/vendor/modernizr-2.8.3.min.js')}}"></script>
 
     <!-- Color Css Files
     ============================================ -->
-    <link rel="alternate stylesheet" type="text/css" href="switcher/color-one.css" title="color-one" media="screen" />
-    <link rel="alternate stylesheet" type="text/css" href="switcher/color-two.css" title="color-two" media="screen" />
-    <link rel="alternate stylesheet" type="text/css" href="switcher/color-three.css" title="color-three" media="screen" />
-    <link rel="alternate stylesheet" type="text/css" href="switcher/color-four.css" title="color-four" media="screen" />
-    <link rel="alternate stylesheet" type="text/css" href="switcher/color-five.css" title="color-five" media="screen" />
-    <link rel="alternate stylesheet" type="text/css" href="switcher/color-six.css" title="color-six" media="screen" />
-    <link rel="alternate stylesheet" type="text/css" href="switcher/color-seven.css" title="color-seven" media="screen" />
-    <link rel="alternate stylesheet" type="text/css" href="switcher/color-eight.css" title="color-eight" media="screen" />
-    <link rel="alternate stylesheet" type="text/css" href="switcher/color-nine.css" title="color-nine" media="screen" />
-    <link rel="alternate stylesheet" type="text/css" href="switcher/color-ten.css" title="color-ten" media="screen" />
-    <link rel="alternate stylesheet" type="text/css" href="switcher/color-ten.css" title="color-ten" media="screen" />
-    <link rel="alternate stylesheet" type="text/css" href="switcher/pattren1.css" title="pattren1" media="screen" />
-    <link rel="alternate stylesheet" type="text/css" href="switcher/pattren2.css" title="pattren2" media="screen" />
-    <link rel="alternate stylesheet" type="text/css" href="switcher/pattren3.css" title="pattren3" media="screen" />
-    <link rel="alternate stylesheet" type="text/css" href="switcher/pattren4.css" title="pattren4" media="screen" />
-    <link rel="alternate stylesheet" type="text/css" href="switcher/pattren5.css" title="pattren5" media="screen" />
-    <link rel="alternate stylesheet" type="text/css" href="switcher/background1.css" title="background1" media="screen" />
-    <link rel="alternate stylesheet" type="text/css" href="switcher/background2.css" title="background2" media="screen" />
-    <link rel="alternate stylesheet" type="text/css" href="switcher/background3.css" title="background3" media="screen" />
-    <link rel="alternate stylesheet" type="text/css" href="switcher/background4.css" title="background4" media="screen" />
-    <link rel="alternate stylesheet" type="text/css" href="switcher/background5.css" title="background5" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/color-one.css')}}" title="color-one" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/color-two.css')}}" title="color-two" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/color-three.css')}}" title="color-three" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/color-four.css')}}" title="color-four" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/color-five.css')}}" title="color-five" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/color-six.css')}}" title="color-six" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/color-seven.css')}}" title="color-seven" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/color-eight.css')}}" title="color-eight" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/color-nine.css')}}" title="color-nine" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/color-ten.css')}}" title="color-ten" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/color-ten.css')}}" title="color-ten" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/pattren1.css')}}" title="pattren1" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/pattren2.css')}}" title="pattren2" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/pattren3.css')}}" title="pattren3" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/pattren4.css')}}" title="pattren4" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/pattren5.css')}}" title="pattren5" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/background1.css')}}" title="background1" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/background2.css')}}" title="background2" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/background3.css')}}" title="background3" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/background4.css')}}" title="background4" media="screen" />
+    <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/background5.css')}}" title="background5" media="screen" />
 </head>
 <!-- Load font awesome icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -446,7 +446,7 @@
 
                                                 </div>
                                                 <div class="col-4 pull-left">
-                                                    <h3><b><a hrefhref="#">Faculty Of Development Studies</a></b></h3>
+                                                    <h3><b><a href="#">Faculty Of Development Studies</a></b></h3>
                                                     <a href="#">Dept. Of Agribusiness Management</a>
                                                     <a href="#">Dept. Of Agricultural and Applied Economics</a>
                                                     <a href="#">Extension Department</a>
@@ -519,7 +519,7 @@
         </header>
         <!--End of Header Area-->
         <!--Breadcrumb Banner Area Start-->
-        <div class="breadcrumb-banner-area" style="background: url(img/banner/research.jpg)">
+        <div class="breadcrumb-banner-area" style="background: url({{asset('img/banner/research.jpg')}})">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -536,6 +536,7 @@
                 </div>
             </div>
         </div>
+
        {{$slot}}
 
         <!--End of Event Area-->
@@ -669,16 +670,16 @@
 
 <!-- jquery
 ============================================ -->
-<script src="js/vendor/jquery-1.12.4.min.js"></script>
+<script src="{{asset('js/vendor/jquery-1.12.4.min.js')}}"></script>
 
 <!-- bootstrap JS
 ============================================ -->
-<script src="js/bootstrap.min.js"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
 
 <!-- nivo slider js
 ============================================ -->
-<script src="lib/nivo-slider/js/jquery.nivo.slider.js" type="text/javascript"></script>
-<script src="lib/nivo-slider/home.js" type="text/javascript"></script>
+<script src="{{asset('lib/nivo-slider/js/jquery.nivo.slider.js')}}" type="text/javascript"></script>
+<script src="{{asset('lib/nivo-slider/home.js')}}" type="text/javascript"></script>
 
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuU_0_uLMnFM-2oWod_fzC0atPZj7dHlU"></script>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -709,68 +710,68 @@
 
 <!-- meanmenu JS
 ============================================ -->
-<script src="js/jquery.meanmenu.js"></script>
+<script src="{{asset('js/jquery.meanmenu.js')}}"></script>
 
 <!-- wow JS
 ============================================ -->
-<script src="js/wow.min.js"></script>
+<script src="{{asset('js/wow.min.js')}}"></script>
 
 <!-- owl.carousel JS
 ============================================ -->
-<script src="js/owl.carousel.min.js"></script>
+<script src="{{asset('js/owl.carousel.min.js')}}"></script>
 
 <!-- scrollUp JS
 ============================================ -->
-<script src="js/jquery.scrollUp.min.js"></script>
+<script src="{{asset('js/jquery.scrollUp.min.js')}}"></script>
 
 <!-- Waypoints JS
 ============================================ -->
-<script src="js/waypoints.min.js"></script>
+<script src="{{asset('js/waypoints.min.js')}}"></script>
 
 <!-- Counterup JS
 ============================================ -->
-<script src="js/jquery.counterup.min.js"></script>
+<script src="{{asset('js/jquery.counterup.min.js')}}"></script>
 
 <!-- Slick JS
 ============================================ -->
-<script src="js/slick.min.js"></script>
+<script src="{{asset('js/slick.min.js')}}"></script>
 
 <!-- Animated Headlines JS
 ============================================ -->
-<script src="js/animated-headlines.js"></script>
+<script src="{{asset('js/animated-headlines.js')}}"></script>
 
 <!-- Textilate JS
 ============================================ -->
-<script src="js/textilate.js"></script>
+<script src="{{asset('js/textilate.js')}}"></script>
 
 <!-- Lettering JS
 ============================================ -->
-<script src="js/lettering.js"></script>
+<script src="{{asset('js/lettering.js')}}"></script>
 
 <!-- Video Player JS
 ============================================ -->
-<script src="js/jquery.mb.YTPlayer.js"></script>
+<script src="{{asset('js/jquery.mb.YTPlayer.js')}}"></script>
 
 <!-- Mail Chimp JS
 ============================================ -->
-<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="{{asset('js/jquery.ajaxchimp.min.js')}}"></script>
 
 <!-- AJax Mail JS
 ============================================ -->
 
-<script src="js/ajax-mail.js"></script>
+<script src="{{asset('js/ajax-mail.js')}}"></script>
 
 <!-- plugins JS
 ============================================ -->
-<script src="js/plugins.js"></script>
+<script src="{{asset('js/plugins.js')}}"></script>
 
 <!-- StyleSwitch JS
 ============================================ -->
-<script src="js/styleswitch.js"></script>
+<script src="{{asset('js/styleswitch.js')}}"></script>
 
 <!-- main JS
 ============================================ -->
-<script src="js/main.js"></script>
+<script src="{{asset('js/main.js')}}"></script>
 </body>
 
 <!-- Mirrored from preview.freethemescloud.com/educat-preview/educat/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Apr 2020 09:15:58 GMT -->

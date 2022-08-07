@@ -2648,6 +2648,10 @@ span.c-text {display: inline-block;}
     list-style: disc
 }
 
+.listing li a{
+    color: #86bc42;
+}
+
 .filter{
     padding: 20px 0
 }
@@ -2724,3 +2728,67 @@ span.c-text {display: inline-block;}
     margin-bottom: 16px
 }
 
+.item__footer{
+   /* display: flex;
+    justify-content: end;
+    align-items: center;*/
+    margin: 6px;
+}
+
+.item__footer .authors{
+ /*   display: flex;
+    justify-content: end;
+    align-items: center;*/
+
+    font-weight: 600;
+}
+
+.item__footer .authors div{
+  /*  display: flex;
+    justify-content: end;
+    align-items: center;*/
+    /*margin: 0 3px;*/
+}
+
+.item__footer .authors img{
+    width: 30px;
+    border-radius: 50%;
+    /*margin: 0 4px;*/
+}
+
+.item__footer .date{
+    display: flex;
+    justify-content: space-between;
+}
+.keywords{
+    /*margin-top: 12px;*/
+}
+.keywords a{
+    padding: 2px 8px;
+    margin: 4px;
+    background-color: #ddd;
+    border-radius: 6px;
+    color: black;
+}
+.keywords a.active{
+    background-color: #86bc48;
+    font-weight: 600;
+}
+.listing .keywords a{
+    padding: 2px 8px;
+    margin: 2px;
+    background-color: #ddd;
+    border-radius: 6px;
+    color: black;
+}
+
+.createForm{
+    padding: 40px 40px
+}
+.createForm h4{
+    color: #98a560;
+}
+
+.createForm .row div{
+    margin-top:12px ;
+}

@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         $this->call(AuthorTableSeeder::class);
         $this->call(JournalTableSeeder::class);
+        $this->call(TypeTableSeeder::class);
         $this->call(ArticlesTableSeeder::class);
     }
 }

@@ -31,61 +31,14 @@
                             <div class="recent-content-section">
                                 <p><a href="{{route('publications')}}">Publications</a></p>
                                 <p><a href="{{route('datasets')}} " class="active">Datasets</a></p>
+                                <p><a href="{{route('upload')}}">Upload</a></p>
                                 <p><a href="#">Patents</a></p>
                                 <p><a href="#">Staff</a></p>
                                 <p><a href="#">Researchers</a></p>
                                 <p><a href="#">Agriculture Directorate</a></p>
                             </div>
                         </div>
-                        <div class="single-sidebar-widget" style="margin:0">
-
-                            <div class="single-item" style="margin-top:20px">
-                                <div class="filter">
-                                    <h4>Filter by Keywords</h4>
-                                    <p><a href="#">Journals</a></p>
-                                    <p><a href="#">Books</a></p>
-                                    <p><a href="#">Research Papers</a></p>
-                                    <p  class="show-more"><a href="#">SHOW MORE</a> <i class="mdi mdi-chevron-right"></i></p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="single-sidebar-widget" style="margin:0">
-
-                            <div class="single-item" style="margin-top:20px">
-                                <div class="filter">
-                                    <h4>Filter by Programs</h4>
-                                    <p><a href="#">Crops</a></p>
-                                    <p><a href="#">Livestock</a></p>
-                                    <p><a href="#">Nutrition and Food Science</a></p>
-                                    <p  class="show-more"><a href="#">SHOW MORE</a> <i class="mdi mdi-chevron-right"></i></p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="single-sidebar-widget" style="margin:0">
-
-                            <div class="single-item" style="margin-top:20px">
-                               <div class="filter">
-                                    <h4>Filter by Topics</h4>
-                                    <p><a href="#">Food Security</a></p>
-                                    <p><a href="#">Livestock</a></p>
-                                    <p><a href="#">Animal Health</a></p>
-                                    <p><a href="#">Value Chain Analysis</a></p>
-                                    <p><a href="#">Food Policy Analysis</a></p>
-                                    <p><a href="#">Plant Breeding</a></p>
-                                    <p><a href="#">Irrigation</a></p>
-                                    <p><a href="#">Biotechnology</a></p>
-                                    <p><a href="#">Economic Development</a></p>
-                                    <p><a href="#">Government Subsidy</a></p>
-                                    <p><a href="#">Agricultural Engineering</a></p>
-                                    <p><a href="#">Nutrition and Diet</a></p>
-                                    <p  class="show-more"><a href="#">SHOW MORE</a> <i class="mdi mdi-chevron-right"></i></p>
-                                </div>
-
-                            </div>
-                        </div>
-
+                        @include('components.sidebar')
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -93,15 +46,16 @@
                     <div class="event-details-content">
                         <div class="single-event-item" style="padding:0">
                             <div class="single-event-image" style="border-bottom: 1px solid #e1e1e1;">
-                                <div class="searchSection">
+                                <form method="post" action="{{route('search')}}" class="searchSection">
+                                    @csrf
                                     <h4>Search</h4>
 
                                     <div class="search-field">
 
-                                        <label for="keywords" class="form-group">By Keywords</label>
+                                        <label for="title" class="form-group">By Title</label>
                                         <div class="field">
-                                            <i style="" class="fa fa-search"></i>
-                                            <input type="text" id="keywords" name="keywords" class="form-control" style="">
+                                            {{--                                            <i style="" class="fa fa-search"></i>--}}
+                                            <input type="text" id="title" name="title" class="form-control" style="">
                                         </div>
 
                                     </div>
@@ -110,61 +64,130 @@
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <label for="authors" class="form-group">By Authors</label>
-                                                <input type="text" id="authors" name="authors" class="form-control">
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="type" class="form-group">Type Of</label>
-                                                <select name="type" id="type" class="form-control">
-                                                    <option value="type_1">Type 1</option>
-                                                    <option value="type_2">Type 2</option>
+                                                <select id="authors" name="author" class="form-control">
+                                                    <option value="">Select Author</option>
+                                                    @foreach($authors as $author)
+                                                        <option value="{{$author->id}}">{{$author->firstName}} {{$author->middleName}} {{$author->lastName}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-4 col-sm-6">
+                                                <label for="type" class="form-group">Type Of</label>
+                                                <select name="type" id="type" class="form-control">
+                                                    <option value="">Select Type</option>
+                                                    @foreach($types as $type)
+                                                        <option value="{{$type->id}}">{{$type->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6">
                                                 <label for="sort" class="form-group">Sort By</label>
-                                                <select name="sort" id="authors" class="form-control">
-                                                    <option value="date">Date</option>
-                                                    <option value="alphabetical">Alphabetical</option>
+                                                <select name="sort" id="sort" class="form-control">
+                                                    <option value="year">Date</option>
+                                                    <option value="title">Alphabetical</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
+                                    <div style="text-align: center">
+                                        <input class="btn btn-primary" style="background: #03a100;"  type="submit" value="Search">
+                                    </div>
 
-                                </div>
+                                </form>
                             </div>
                             <div class="single-event-text" style="padding:0; background-color: white">
 
                                 <div class="listing">
-                                    <p style="text-align: justify">LUANAR’s AquaFish ACE supports cutting edge research for students, staff and partners involved in the ACE II Project. AquaFish has put in place a research agenda which guides the growth and development of ACE II innovative research approaches.<br></p>
-
-                                    <p style="text-align: justify">The AquaFish center facilitates and promotes community action research, and strengthens linkages with the private sector in the region while increasing females and youth participation</p><br>
-                                    <p style="text-align: justify">The center has trained students, faculty and farmers through employing innovative, entrepreneurial and multidisciplinary approaches to training, research and outreach on production, value addition and fisheries management, through strategic south-south and north-south partnerships with advanced knowledge institutions and other higher education stakeholders.</p><br>
-
-                                    <h3 style="margin-bottom: 20px">ACE AQUAFISH PUBLICATIONS</h3>
                                     <ol>
-                                        <li>
-                                            <p><b>1 .  </b>Elias Rabson Chirwa , Limbikani Chilima (2018 ) Use of benthic macroinverterbrate indices as bio-indicators of ecosystem healtha for the detection of degraded landscapes in malawi .International Journal of Agriculture, Forestry and Fisheries (  <a href="http://www.openscienceonline.com/journal/ijaff">http://www.openscienceonline.com/journal/ijaff )</a></p>
-                                            <hr>
-                                        </li>
 
-                                        <li>
-                                            <p><b>2 .  </b>Camerson Donald Ng'ambi , Prakash Patil, Satish Rama Poojary, AbhimanBallyaya, Naveen Kumar Thammegouda, Ramesh Kashi Srinivasayya (2018 ) Skim milk flocculation concentrates white spot syndrom virus in seawater for the detections using a monocional antibody base flow-through assay .International Journal of Poultry and Fisheries Sciences (  <a href="?https://symbiosisonlinepublishing.com/poultry-fisheries-science/">?https://symbiosisonlinepublishing.com/poultry-fisheries-science/ )</a></p>
-                                            <hr>
-                                        </li>
+                                        @foreach($datasets as $dataset)
+                                            <li>
+                                                <div>
+                                                    <b>{{$loop->index + 1}} .  </b> {{$dataset->title}} (  <a href="{{asset($dataset->file)}}">{{asset($dataset->file)}}</a>)
+                                                </div>
+                                                <div class="keywords">
+                                                    @foreach($keywords=$dataset->keywords as $_keyword)
+                                                        <a href="{{route('keywords',['slug'=>$_keyword->slug])}}"> {{$_keyword->name}}</a>
+                                                    @endforeach
+                                                </div>
+                                                <div class="item__footer">
+                                                    <div class="authors">
+                                                        <div>
+                                                            @foreach($authors=$dataset->authors as $author)
+                                                                @if($loop->last)
+                                                                    {{$author->firstName[0]}}. {{$author->lastName}}
+                                                                @else
+                                                                    {{$author->firstName[0]}}. {{$author->lastName}},
+                                                                @endif
 
-                                        <li>
-                                            <p><b>3 .  </b>Jeremiah  Kang'ombe , Jane Yatuha, J Rutaisire, L Chapman,, D Sikawa (2018 ) Reproductive strategies of smooth-head catfish Clarias liocephalus (Boulenger,1898), in the Rwizi-Rufuha wetland system,south-western Uganda .African Journal of Aquatic Science (  <a href="https://doi.org/10.2989/16085914.2018.1470082">https://doi.org/10.2989/16085914.2018.1470082 )</a></p>
-                                            <hr>
-                                        </li>
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                    <div class="date">
+                                                        <div><i class="mdi mdi-calendar"></i> {{$dataset->month ?? ''}} {{$dataset->year}}</div>
+                                                        <div><i class="mdi mdi-download"></i>{{$dataset->downloadCount}}</div>
 
-                                        <li>
-                                            <p><b>4 .  </b>Mose Majid Limuwa , Wales Singini, Trond Storebakken (2018 ) Is Fish Farming an Illusion for Lake Malawi Riparian Communities under Environmental Changes. .Sustainability (  <a href="doi:10.3390/su1005145">doi:10.3390/su1005145 )</a></p>
-                                            <hr>
-                                        </li>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                            </li>
+                                        @endforeach
+                                    </ol>
+                                  {{--  <div>
+                                        <p style="text-align: justify">LUANAR’s AquaFish ACE supports cutting edge research for students, staff and partners involved in the ACE II Project. AquaFish has put in place a research agenda which guides the growth and development of ACE II innovative research approaches.<br></p>
+
+                                        <p style="text-align: justify">The AquaFish center facilitates and promotes community action research, and strengthens linkages with the private sector in the region while increasing females and youth participation</p><br>
+                                        <p style="text-align: justify">The center has trained students, faculty and farmers through employing innovative, entrepreneurial and multidisciplinary approaches to training, research and outreach on production, value addition and fisheries management, through strategic south-south and north-south partnerships with advanced knowledge institutions and other higher education stakeholders.</p><br>
+
+                                        <h3 style="margin-bottom: 20px">ACE AQUAFISH PUBLICATIONS</h3>
+                                        <ol>
+                                            <li>
+                                                <div>
+                                                    <b>1 .  </b>Elias Rabson Chirwa , Limbikani Chilima (2018 ) Use of benthic macroinverterbrate indices as bio-indicators of ecosystem healtha for the detection of degraded landscapes in malawi .International Journal of Agriculture, Forestry and Fisheries (  <a href="http://www.openscienceonline.com/journal/ijaff">http://www.openscienceonline.com/journal/ijaff )</a>
+                                                </div>
+                                                <div class="item__footer">
+                                                    <div class="authors">
+                                                        <div>
+                                                            Mirriam Mars, Mirriam Mars, Mirriam Mars, Mirriam Mars
+                                                        </div>
+                                                        --}}{{--
+                                                        <div class="author">
+                                                            <div><img src="{{asset('images/avatar.png')}}" alt=""></div>
+                                                            <div>Mirriam Mars</div>
+                                                        </div>
+                                                        <div class="author">
+                                                            <div><img src="{{asset('images/avatar.png')}}" alt=""></div>
+                                                            <div>Mirriam Mars</div>
+                                                        </div>--}}{{--
+                                                    </div>
+                                                    <div class="date">
+                                                        <div><i class="mdi mdi-calendar"></i> January, 2022</div>
+                                                        <div><i class="mdi mdi-download"></i>20</div>
+
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                            </li>
+
+                                            <li>
+                                                <p><b>2 .  </b>Camerson Donald Ng'ambi , Prakash Patil, Satish Rama Poojary, AbhimanBallyaya, Naveen Kumar Thammegouda, Ramesh Kashi Srinivasayya (2018 ) Skim milk flocculation concentrates white spot syndrom virus in seawater for the detections using a monocional antibody base flow-through assay .International Journal of Poultry and Fisheries Sciences (  <a href="?https://symbiosisonlinepublishing.com/poultry-fisheries-science/">?https://symbiosisonlinepublishing.com/poultry-fisheries-science/ )</a></p>
+                                                <hr>
+                                            </li>
+
+                                            <li>
+                                                <p><b>3 .  </b>Jeremiah  Kang'ombe , Jane Yatuha, J Rutaisire, L Chapman,, D Sikawa (2018 ) Reproductive strategies of smooth-head catfish Clarias liocephalus (Boulenger,1898), in the Rwizi-Rufuha wetland system,south-western Uganda .African Journal of Aquatic Science (  <a href="https://doi.org/10.2989/16085914.2018.1470082">https://doi.org/10.2989/16085914.2018.1470082 )</a></p>
+                                                <hr>
+                                            </li>
+
+                                            <li>
+                                                <p><b>4 .  </b>Mose Majid Limuwa , Wales Singini, Trond Storebakken (2018 ) Is Fish Farming an Illusion for Lake Malawi Riparian Communities under Environmental Changes. .Sustainability (  <a href="doi:10.3390/su1005145">doi:10.3390/su1005145 )</a></p>
+                                                <hr>
+                                            </li>
 
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -177,7 +200,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -190,7 +213,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -203,7 +226,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -216,7 +239,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -229,7 +252,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -242,7 +265,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -255,7 +278,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -268,7 +291,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -281,7 +304,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -294,7 +317,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -307,7 +330,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -320,7 +343,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -333,7 +356,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -346,7 +369,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -359,7 +382,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -372,7 +395,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -385,7 +408,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -398,7 +421,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -411,7 +434,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -424,7 +447,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -437,7 +460,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -450,7 +473,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -463,7 +486,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -476,7 +499,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -489,7 +512,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -502,7 +525,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -515,7 +538,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -528,7 +551,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -541,7 +564,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -554,7 +577,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -567,7 +590,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -580,7 +603,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -593,7 +616,7 @@
 
 
 
-                                        <li>
+                                            <li>
 
 
 
@@ -603,7 +626,8 @@
 
                                             </li>
 
-                                    </ol>
+                                        </ol>
+                                    </div>--}}
                                 </div>
 
                             </div>

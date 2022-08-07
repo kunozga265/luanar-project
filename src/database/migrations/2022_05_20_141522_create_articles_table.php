@@ -16,11 +16,14 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->text('title');
+            $table->string('month')->nullable();
             $table->string('year')->nullable();
             $table->text('abstract')->nullable();
             $table->string('file');
-            $table->integer('downloadCount');
+            $table->string('type_id')->nullable();
+            $table->integer('downloadCount')->default(0);
             $table->integer('journal_id')->nullable();
+            $table->boolean('verified')->default(0);
             $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });
