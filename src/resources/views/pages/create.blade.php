@@ -4,18 +4,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="sidebar-widget">
-                        <div class="single-sidebar-widget" style="margin:0">
-                            <h4 class="title">About Research at Luanar.</h4>
-                            <div class="recent-content-section">
-                                <p><a href="{{route('publications')}}">Publications</a></p>
-                                <p><a href="{{route('datasets')}}">Datasets</a></p>
-                                <p><a href="{{route('upload')}}" class="active">Upload</a></p>
-                                <p><a href="#">Patents</a></p>
-                                <p><a href="#">Staff</a></p>
-                                <p><a href="#">Researchers</a></p>
-                                <p><a href="#">Agriculture Directorate</a></p>
-                            </div>
-                        </div>
+                        <x-navigation></x-navigation>
                         @include('components.sidebar')
                     </div>
                 </div>

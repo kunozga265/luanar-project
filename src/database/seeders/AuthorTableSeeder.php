@@ -140,5 +140,45 @@ class AuthorTableSeeder extends Seeder
             "lastName"=> "Limuwa",
             "biography"=> null,
           ]);
+          Author::create([
+              "avatar"=> "images/avatar.png",
+              "title"=> "Assoc Prof",
+              "firstName"=> "Samson",
+              "middleName"=> null,
+              "lastName"=> "Katengeza",
+              "biography"=> null,
+          ]);
+          Author::create([
+              "avatar"=> "images/avatar.png",
+              "title"=> "Dr",
+              "firstName"=> "Joseph",
+              "middleName"=> null,
+              "lastName"=> "Dzanja",
+              "biography"=> null,
+          ]);
+          Author::create([
+              "avatar"=> "images/avatar.png",
+              "title"=> "Prof",
+              "firstName"=> "Moses",
+              "middleName"=> null,
+              "lastName"=> "Maliro",
+              "biography"=> null,
+          ]);
+          Author::create([
+              "avatar"=> "images/avatar.png",
+              "title"=> "Dr",
+              "firstName"=> "Alexander",
+              "middleName"=> null,
+              "lastName"=> "Kalimbira",
+              "biography"=> null,
+          ]);
+          Author::create([
+              "avatar"=> "images/avatar.png",
+              "title"=> "Prof",
+              "firstName"=> "D",
+              "middleName"=> null,
+              "lastName"=> "Kasamu",
+              "biography"=> null,
+          ]);
     }
 }

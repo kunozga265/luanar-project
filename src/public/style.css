@@ -2728,6 +2728,21 @@ span.c-text {display: inline-block;}
     margin-bottom: 16px
 }
 
+
+.image-placeholder{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.projectsSearchSection h4{
+    color: white;
+}
+
+.projectsSearchSection {
+    color: white;
+}
+
 .item__footer{
    /* display: flex;
     justify-content: end;
@@ -2791,4 +2806,38 @@ span.c-text {display: inline-block;}
 
 .createForm .row div{
     margin-top:12px ;
+}
+
+/* Projects */
+.projectsSearchSection{
+    background-image: url("/images/search.jpg");
+    background-blend-mode: darken;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.project-single {
+    margin: 10px;
+    padding: 0;
+    /*border: 1px solid #dddddd;*/
+}
+
+.project-single .image-placeholder{
+    height: 255px;
+}
+
+.project-single .header{
+    padding: 20px 20px 0 20px;
+}
+
+.font-weight-600{
+    font-weight: 600;
+}
+.project-single .details{
+    padding:  0 20px 20px 20px;
+}
+
+.project-single .details p{
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
 }

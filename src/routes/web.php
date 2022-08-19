@@ -4,6 +4,7 @@ use App\Http\Controllers\AppController;
 use App\Http\Controllers\Web\ArticleController;
 use App\Http\Controllers\Web\DatasetController;
 use App\Http\Controllers\Web\KeywordController;
+use App\Http\Controllers\Web\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,22 @@ Route::get('/datasets', [
 Route::get('/keywords/{slug}', [
     KeywordController::class,'show'
 ])->name('keywords');
+
+Route::get('/projects-and-outreach-programs', [
+    ProjectController::class,'index'
+])->name('projects');
+
+Route::get('/projects-and-outreach-programs/upload', [
+    ProjectController::class,'create'
+])->name('projects.create');
+
+Route::post('/projects-and-outreach-programs/upload', [
+    ProjectController::class,'store'
+])->name('projects.store');
+
+Route::post('/projects/search', [
+    ProjectController::class,'search'
+])->name('projects.search');
 
 Route::post('/search', [
     AppController::class,'search'

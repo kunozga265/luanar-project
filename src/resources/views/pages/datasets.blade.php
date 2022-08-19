@@ -4,40 +4,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="sidebar-widget">
-                        <div class="single-sidebar-widget" style="margin:0">
-                            <h4 class="title">About Research at Luanar.</h4>
-                            {{-- <div class="recent-content" style="border: solid 1px aqua">
-                                 <ul>
-                                     <li
-                                         style="padding: 7px; border-bottom: solid 1px aqua"
-                                         >
-
-                                         <a href="{{route('home')}}">
-                                             <b> <i class="mdi mdi-chevron-right"></i> About Research</b>
-                                         </a>
-
-                                     </li>
-
-                                     <li style="padding: 7px; border-bottom: solid 1px aqua; background:#2621ff;" ><a href="{{route('publications')}}"><b style="color: #FFFAFA"> <i class="mdi mdi-chevron-right"></i> Publications</b></a></li>
-                                     <li style="padding: 7px; border-bottom: solid 1px aqua"><a href="{{route('datasets')}}"><b> <i class="mdi mdi-chevron-right"></i> Datasets</b></a></li>
-                                     <li style="padding: 7px; border-bottom: solid 1px aqua"><a href="#"><b> <i class="mdi mdi-chevron-right"></i> Patents</b></a></li>
-                                     <li style="padding: 7px; border-bottom: solid 1px aqua"><a href="#"><b> <i class="mdi mdi-chevron-right"></i> Staff</b></a></li>
-                                     <li style="padding: 7px; border-bottom: solid 1px aqua"><a href="#"><b> <i class="mdi mdi-chevron-right"></i> Researchers</b></a></li>
-                                     <li style="padding: 7px; border-bottom: solid 1px aqua"><a href="#"><b> <i class="mdi mdi-chevron-right"></i> Agriculture Directorate</b></a></li>
-
-                                 </ul>
-
-                             </div>--}}
-                            <div class="recent-content-section">
-                                <p><a href="{{route('publications')}}">Publications</a></p>
-                                <p><a href="{{route('datasets')}} " class="active">Datasets</a></p>
-                                <p><a href="{{route('upload')}}">Upload</a></p>
-                                <p><a href="#">Patents</a></p>
-                                <p><a href="#">Staff</a></p>
-                                <p><a href="#">Researchers</a></p>
-                                <p><a href="#">Agriculture Directorate</a></p>
-                            </div>
-                        </div>
+                        <x-navigation></x-navigation>
                         @include('components.sidebar')
                     </div>
                 </div>
@@ -82,10 +49,20 @@
                                             </div>
                                             <div class="col-md-4 col-sm-6">
                                                 <label for="sort" class="form-group">Sort By</label>
-                                                <select name="sort" id="sort" class="form-control">
-                                                    <option value="year">Date</option>
-                                                    <option value="title">Alphabetical</option>
-                                                </select>
+                                                <div class="row">
+                                                    <div class="col-sm-6" style="padding-right: 5px">
+                                                        <select name="sort" id="sort" class="form-control">
+                                                            <option value="title">Title</option>
+                                                            <option value="year">Date</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-sm-6" style="padding-left: 5px">
+                                                        <select name="order" id="sort" class="form-control">
+                                                            <option value="asc" >Ascending</option>
+                                                            <option value="desc" >Descending</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -99,11 +76,12 @@
 
                                 <div class="listing">
                                     <ol>
-
+                                        <a href="{{route('upload')}}" class="btn btn-primary" style="background: #03a100;" >Upload <i class="mdi mdi-arrow-up"></i></a>
+                                        <hr>
                                         @foreach($datasets as $dataset)
                                             <li>
                                                 <div>
-                                                    <b>{{$loop->index + 1}} .  </b> {{$dataset->title}} (  <a href="{{asset($dataset->file)}}">{{asset($dataset->file)}}</a>)
+                                                    <b>{{$loop->index + 1}} .  </b> {{$dataset->title}}
                                                 </div>
                                                 <div class="keywords">
                                                     @foreach($keywords=$dataset->keywords as $_keyword)
@@ -125,7 +103,8 @@
                                                     </div>
                                                     <div class="date">
                                                         <div><i class="mdi mdi-calendar"></i> {{$dataset->month ?? ''}} {{$dataset->year}}</div>
-                                                        <div><i class="mdi mdi-download"></i>{{$dataset->downloadCount}}</div>
+{{--                                                        <div><i class="mdi mdi-download"></i>{{$dataset->downloadCount}}</div>--}}
+                                                        <div><a href="{{asset($dataset->file)}}" class="font-weight-600" target="_blank">Download <i class="mdi mdi-download"></i></a></div>
 
                                                     </div>
                                                 </div>

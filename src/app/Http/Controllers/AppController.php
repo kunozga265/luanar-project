@@ -103,28 +103,28 @@ class AppController extends Controller
 //        dd(isset($request->title),isset($request->author),isset($request->type));
         if (isset($request->title) && isset($request->author) && isset($request->type)){
             $author=Author::find($request->author);
-            $articles=$author->articles()->where('type_id',$request->type)->where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,'asc')->get();
-            $datasets=$author->datasets()->where('type_id',$request->type)->where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,'asc')->get();
+            $articles=$author->articles()->where('type_id',$request->type)->where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
+            $datasets=$author->datasets()->where('type_id',$request->type)->where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
         }else if(isset($request->title) && isset($request->author)){
-            $articles=Article::where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,'asc')->get();
-            $datasets=Dataset::where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,'asc')->get();
+            $articles=Article::where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
+            $datasets=Dataset::where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
         }else if(isset($request->title) && isset($request->type)){
-            $articles=Article::where('type_id',$request->type)->where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,'asc')->get();
-            $datasets=Dataset::where('type_id',$request->type)->where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,'asc')->get();
+            $articles=Article::where('type_id',$request->type)->where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
+            $datasets=Dataset::where('type_id',$request->type)->where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
         }else if(isset($request->author) && isset($request->type)){
             $author=Author::find($request->author);
-            $articles=$author->articles()->where('type_id',$request->type)->orderBy($request->sort,'asc')->get();
-            $datasets=$author->datasets()->where('type_id',$request->type)->orderBy($request->sort,'asc')->get();
+            $articles=$author->articles()->where('type_id',$request->type)->orderBy($request->sort,$request->order)->get();
+            $datasets=$author->datasets()->where('type_id',$request->type)->orderBy($request->sort,$request->order)->get();
         }else if(isset($request->author)){
             $author=Author::find($request->author);
-            $articles=$author->articles()->orderBy($request->sort,'asc')->get();
-            $datasets=$author->datasets()->orderBy($request->sort,'asc')->get();
+            $articles=$author->articles()->orderBy($request->sort,$request->order)->get();
+            $datasets=$author->datasets()->orderBy($request->sort,$request->order)->get();
         }else if(isset($request->title)){
-            $articles=Article::where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,'asc')->get();
-            $datasets=Dataset::where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,'asc')->get();
+            $articles=Article::where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
+            $datasets=Dataset::where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
         }else if(isset($request->type)){
-            $articles=Article::where('type_id',$request->type)->orderBy($request->sort,'asc')->get();
-            $datasets=Dataset::where('type_id',$request->type)->orderBy($request->sort,'asc')->get();
+            $articles=Article::where('type_id',$request->type)->orderBy($request->sort,$request->order)->get();
+            $datasets=Dataset::where('type_id',$request->type)->orderBy($request->sort,$request->order)->get();
         }
 
 
@@ -138,8 +138,9 @@ class AppController extends Controller
         $authorId=$request->author;
         $typeId=$request->type;
         $sort=$request->sort;
+        $order=$request->order;
 
-        return view('pages.search',compact('articles','datasets','keywords','authors','types','title','authorId','typeId','sort'));
+        return view('pages.search',compact('articles','datasets','keywords','authors','types','title','authorId','typeId','sort','order'));
     }
 
     public function create()

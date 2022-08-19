@@ -269,7 +269,7 @@
                     <div class="row">
                         <div class="col-md-2 col-sm-12">
                             <div class="logo">
-                                <a href="#"><img src="img/logo/weblog.png" alt="luanar"></a>
+                                <a href="#"><img src="{{asset('img/logo/weblog.png')}}" alt="luanar"></a>
                             </div>
                         </div>
                         <div class="col-md-10">
