@@ -113,7 +113,7 @@
                                                             @foreach($articles as $article)
                                                                 <li>
                                                                     <div>
-                                                                        <b>{{$loop->index + 1}} .  </b> {{$article->title}} (  <a href="{{asset($article->file)}}">{{asset($article->file)}}</a>)
+                                                                        <b>{{$loop->index + 1}} .  </b> {{$article->title}}
                                                                     </div>
                                                                     <div class="keywords">
                                                                         @foreach($keywords=$article->keywords as $_keyword)
@@ -135,8 +135,8 @@
                                                                         </div>
                                                                         <div class="date">
                                                                             <div><i class="mdi mdi-calendar"></i> {{$article->month ?? ''}} {{$article->year}}</div>
-                                                                            <div><i class="mdi mdi-download"></i>{{$article->downloadCount}}</div>
-
+{{--                                                                            <div><i class="mdi mdi-download"></i>{{$article->downloadCount}}</div>--}}
+                                                                            <div><a href="{{asset($article->file)}}" class="font-weight-600" target="_blank">Download <i class="mdi mdi-download"></i></a></div>
                                                                         </div>
                                                                     </div>
                                                                     <hr>
@@ -178,7 +178,7 @@
                                                                 @foreach($datasets as $dataset)
                                                                     <li>
                                                                         <div>
-                                                                            <b>{{$loop->index + 1}} .  </b> {{$dataset->title}} (  <a href="{{asset($dataset->file)}}">{{asset($dataset->file)}}</a>)
+                                                                            <b>{{$loop->index + 1}} .  </b> {{$dataset->title}}
                                                                         </div>
                                                                         <div class="keywords">
                                                                             @foreach($keywords=$dataset->keywords as $_keyword)
@@ -200,8 +200,8 @@
                                                                             </div>
                                                                             <div class="date">
                                                                                 <div><i class="mdi mdi-calendar"></i> {{$dataset->month ?? ''}} {{$dataset->year}}</div>
-                                                                                <div><i class="mdi mdi-download"></i>{{$dataset->downloadCount}}</div>
-
+{{--                                                                                <div><i class="mdi mdi-download"></i>{{$dataset->downloadCount}}</div>--}}
+                                                                                <div><a href="{{asset($dataset->file)}}" class="font-weight-600" target="_blank">Download <i class="mdi mdi-download"></i></a></div>
                                                                             </div>
                                                                         </div>
                                                                         <hr>

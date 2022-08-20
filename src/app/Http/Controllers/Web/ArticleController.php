@@ -11,6 +11,7 @@ use App\Models\Author;
 use App\Models\Keyword;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -36,14 +37,15 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles=Article::orderBy('title','ASC')->paginate((new AppController())->paginate);
+        $articles=Article::orderBy('title','ASC')->where('verified',1)->paginate((new AppController())->paginate);
+        $unverifiedArticles=Article::orderBy('title','ASC')->where('verified',0)->paginate((new AppController())->paginate);
         $keywords=Keyword::orderBy('name','asc')->get();
 
         //Search
         $authors=Author::orderBy('firstName','asc')->get();
         $types=Type::orderBy('name','asc')->get();
 
-        return view('pages.publications',compact('articles','keywords','authors','types'));
+        return view('pages.publications',compact('articles','unverifiedArticles','keywords','authors','types'));
     }
 
     /**
@@ -218,5 +220,17 @@ class ArticleController extends Controller
         }
         else
             return response()->json([],404);
+    }
+
+    public function verify(Request $request,$id)
+    {
+        $article=Article::find($id);
+        if (is_object($article)){
+            $article->update([
+                'verified'  =>  true
+            ]);
+        }
+        return Redirect::route('publications');
+
     }
 }

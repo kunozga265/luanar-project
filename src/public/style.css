@@ -2636,7 +2636,7 @@ span.c-text {display: inline-block;}
     Added
 */
 .listing{
-    padding: 40px 40px
+    padding: 20px 20px
 }
 
 .listing ul, .listing ol{
@@ -2826,14 +2826,14 @@ span.c-text {display: inline-block;}
 }
 
 .project-single .header{
-    padding: 20px 20px 0 20px;
+    padding: 20px 0 0 0;
 }
 
 .font-weight-600{
     font-weight: 600;
 }
 .project-single .details{
-    padding:  0 20px 20px 20px;
+    padding:  0 0 20px 0;
 }
 
 .project-single .details p{
@@ -2841,3 +2841,90 @@ span.c-text {display: inline-block;}
     font-size: 12px;
     font-weight: 600;
 }
+
+@media only screen and (min-width: 768px) {
+    .project-single .header{
+        padding: 20px 20px 0 20px;
+    }
+    .project-single .details{
+        padding:  0 20px 20px 20px;
+    }
+}
+
+.author-single{
+    display: block;
+}
+.author-single .header div{
+    font-size: 18px;
+}
+
+.author-single .avatar{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.author-single .image-placeholder{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+}
+
+.author-single .details div{
+    /*margin: 0;*/
+    font-size: 12px;
+    /*font-weight: 600;*/
+    padding: 2px 8px;
+    margin: 4px;
+    background-color: #ddd;
+    border-radius: 6px;
+    color: black;
+}
+
+.searchSection .author-single{
+    justify-content: center;
+}
+.searchSection .author-single .header div span{
+    font-size: 18px;
+    text-align: left;
+    display:inline;
+}
+
+.searchSection .author-single .image-placeholder{
+    width: 150px;
+    height: 150px;
+}
+
+.searchSection .author-single .header{
+    text-align: center;
+}
+.searchSection .author-single .details{
+    justify-content: center;
+}
+
+
+@media only screen and (min-width: 500px) {
+    .author-single .details{
+        display: flex;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .author-single{
+        display: flex;
+    }
+    .searchSection .author-single{
+        display: block;
+    }
+
+    .author-single .image-placeholder{
+        height: 80px;
+        width: 80px;
+    }
+
+    .author-single .avatar{
+        margin-right:20px;
+    }
+
+}
+

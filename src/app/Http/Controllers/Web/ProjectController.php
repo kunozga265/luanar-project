@@ -8,6 +8,7 @@ use App\Models\Donor;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
@@ -19,8 +20,9 @@ class ProjectController extends Controller
         $authors=Author::orderBy('firstName','asc')->get();
         $donors=Donor::orderBy('name','asc')->get();
 
-        $projects=Project::orderBy('name','asc')->get();
-        return view('pages.projects.index',compact('projects','authors','donors'));
+        $projects=Project::where('verified',1)->orderBy('name','asc')->get();
+        $unverifiedProjects=Project::where('verified',0)->orderBy('name','asc')->get();
+        return view('pages.projects.index',compact('projects','unverifiedProjects','authors','donors'));
     }
 
     public function search(Request $request)
@@ -28,21 +30,21 @@ class ProjectController extends Controller
         $projects=null;
 //
         if (isset($request->name) && isset($request->author) && isset($request->donor)){
-            $projects=Project::where('author_id',$request->author)->where('donor_id',$request->donor)->where('name', 'like', '%' .$request->name. '%')->orderBy($request->sort,$request->order)->get();
+            $projects=Project::where('verified',1)->where('author_id',$request->author)->where('donor_id',$request->donor)->where('name', 'like', '%' .$request->name. '%')->orderBy($request->sort,$request->order)->get();
         }else if(isset($request->name) && isset($request->author)){
-            $projects=Project::where('author_id',$request->author)->where('name', 'like', '%' .$request->name. '%')->orderBy($request->sort,$request->order)->get();
+            $projects=Project::where('verified',1)->where('author_id',$request->author)->where('name', 'like', '%' .$request->name. '%')->orderBy($request->sort,$request->order)->get();
         }else if(isset($request->name) && isset($request->donor)){
-            $projects=Project::where('donor_id',$request->donor)->where('name', 'like', '%' .$request->name. '%')->orderBy($request->sort,$request->order)->get();
+            $projects=Project::where('verified',1)->where('donor_id',$request->donor)->where('name', 'like', '%' .$request->name. '%')->orderBy($request->sort,$request->order)->get();
         }else if(isset($request->author) && isset($request->donor)){
-            $projects=Project::where('author_id',$request->author)->where('donor_id',$request->donor)->orderBy($request->sort,$request->order)->get();
+            $projects=Project::where('verified',1)->where('author_id',$request->author)->where('donor_id',$request->donor)->orderBy($request->sort,$request->order)->get();
         }else if(isset($request->author)){
-            $projects=Project::where('author_id',$request->author)->orderBy($request->sort,$request->order)->get();
+            $projects=Project::where('verified',1)->where('author_id',$request->author)->orderBy($request->sort,$request->order)->get();
         }else if(isset($request->name)){
-            $projects=Project::where('name', 'like', '%' .$request->name. '%')->orderBy($request->sort,$request->order)->get();
+            $projects=Project::where('verified',1)->where('name', 'like', '%' .$request->name. '%')->orderBy($request->sort,$request->order)->get();
         }else if(isset($request->donor)){
-            $projects=Project::where('donor_id',$request->donor)->orderBy($request->sort,$request->order)->get();
+            $projects=Project::where('verified',1)->where('donor_id',$request->donor)->orderBy($request->sort,$request->order)->get();
         }else{
-            $projects=Project::orderBy($request->sort,$request->order)->get();
+            $projects=Project::where('verified',1)->orderBy($request->sort,$request->order)->get();
         }
 
         //Search
@@ -104,6 +106,21 @@ class ProjectController extends Controller
         $project->collaborators()->attach($request->collaborators);
 
         return Redirect::route('projects');
+    }
+
+
+    public function verify(Request $request,$id)
+    {
+        $project=Project::find($id);
+        if (is_object($project)){
+            $project->update([
+                'verified'  =>  true
+            ]);
+
+            /*return Redirect::route('projects');*/
+        }
+//        else
+            return Redirect::route('projects');
 
     }
 }

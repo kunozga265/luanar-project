@@ -33,6 +33,16 @@ class Author extends Model
         return $this->hasMany(Project::class);
     }
 
+    public function verifiedProjects()
+    {
+        return $this->projects()->where('verified',1)->get();
+    }
+
+    public function verifiedCollaborations()
+    {
+       return  $this->collaborations()->where('verified',1)->get();
+    }
+
     protected $fillable=[
         'avatar',
         'firstName',

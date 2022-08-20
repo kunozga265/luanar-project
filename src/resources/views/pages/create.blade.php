@@ -19,7 +19,7 @@
 
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <label for="article" class="form-group">Article</label>
+                                            <label for="article" class="form-group">Publication</label>
                                             <input id="article" type="radio" name="kind" value="article" checked>
                                             <label for="dataset" class="form-group">Dataset</label>
                                             <input id="dataset" type="radio" name="kind" value="dataset">

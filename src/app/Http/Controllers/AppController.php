@@ -17,7 +17,7 @@ use Illuminate\Support\Str;
 
 class AppController extends Controller
 {
-    public $paginate=30;
+    public $paginate=20;
     /**
      * Upload image
      *
@@ -72,7 +72,7 @@ class AppController extends Controller
                 $keywordDb=Keyword::where('slug',$slug)->first();
 
                 //If none existent add a new entry of the keyword
-                if (!is_object($keywordDb)){
+                if (!is_object($keywordDb) && $keyword!=""){
                     $keywordDb=Keyword::create([
                         'name'   => ucwords($keyword),
                         'slug'   => $slug
@@ -103,28 +103,28 @@ class AppController extends Controller
 //        dd(isset($request->title),isset($request->author),isset($request->type));
         if (isset($request->title) && isset($request->author) && isset($request->type)){
             $author=Author::find($request->author);
-            $articles=$author->articles()->where('type_id',$request->type)->where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
-            $datasets=$author->datasets()->where('type_id',$request->type)->where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
+            $articles=$author->articles()->where('verified',1)->where('type_id',$request->type)->where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
+            $datasets=$author->datasets()->where('verified',1)->where('type_id',$request->type)->where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
         }else if(isset($request->title) && isset($request->author)){
-            $articles=Article::where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
-            $datasets=Dataset::where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
+            $articles=Article::where('verified',1)->where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
+            $datasets=Dataset::where('verified',1)->where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
         }else if(isset($request->title) && isset($request->type)){
-            $articles=Article::where('type_id',$request->type)->where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
-            $datasets=Dataset::where('type_id',$request->type)->where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
+            $articles=Article::where('verified',1)->where('type_id',$request->type)->where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
+            $datasets=Dataset::where('verified',1)->where('type_id',$request->type)->where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
         }else if(isset($request->author) && isset($request->type)){
             $author=Author::find($request->author);
-            $articles=$author->articles()->where('type_id',$request->type)->orderBy($request->sort,$request->order)->get();
-            $datasets=$author->datasets()->where('type_id',$request->type)->orderBy($request->sort,$request->order)->get();
+            $articles=$author->articles()->where('verified',1)->where('type_id',$request->type)->orderBy($request->sort,$request->order)->get();
+            $datasets=$author->datasets()->where('verified',1)->where('type_id',$request->type)->orderBy($request->sort,$request->order)->get();
         }else if(isset($request->author)){
             $author=Author::find($request->author);
-            $articles=$author->articles()->orderBy($request->sort,$request->order)->get();
-            $datasets=$author->datasets()->orderBy($request->sort,$request->order)->get();
+            $articles=$author->articles()->where('verified',1)->orderBy($request->sort,$request->order)->get();
+            $datasets=$author->datasets()->where('verified',1)->orderBy($request->sort,$request->order)->get();
         }else if(isset($request->title)){
-            $articles=Article::where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
-            $datasets=Dataset::where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
+            $articles=Article::where('verified',1)->where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
+            $datasets=Dataset::where('verified',1)->where('title', 'like', '%' .$request->title. '%')->orderBy($request->sort,$request->order)->get();
         }else if(isset($request->type)){
-            $articles=Article::where('type_id',$request->type)->orderBy($request->sort,$request->order)->get();
-            $datasets=Dataset::where('type_id',$request->type)->orderBy($request->sort,$request->order)->get();
+            $articles=Article::where('verified',1)->where('type_id',$request->type)->orderBy($request->sort,$request->order)->get();
+            $datasets=Dataset::where('verified',1)->where('type_id',$request->type)->orderBy($request->sort,$request->order)->get();
         }
 
 
@@ -206,12 +206,14 @@ class AppController extends Controller
             'journal_id'        =>  $request->journal,
             'type_id'           =>  $request->type,
             'year'              =>  $request->year,
-            'file'              =>  'files/articles/'.$fileName,
+            'file'              =>  'files/datasets/'.$fileName,
         ]);
 
         //Attach Keywords
-        $keywords=explode(',',$request->keywords);
-        $this->attachKeywords($dataset,$keywords);
+        if (isset($request->keywords)) {
+            $keywords = explode(',', $request->keywords);
+            $this->attachKeywords($dataset, $keywords);
+        }
 
         //Attach Authors
         $this->attachAuthors($dataset,$request->authors);

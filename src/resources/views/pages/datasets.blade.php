@@ -73,21 +73,99 @@
                                 </form>
                             </div>
                             <div class="single-event-text" style="padding:0; background-color: white">
+                                <div class="panel-group" id="accordion">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                                    Unverified Datasets
+                                                    (<span>
+                                                        @if(is_object($unverifiedDatasets))
+                                                            {{$unverifiedDatasets->count()}}
+                                                        @else
+                                                            0
+                                                        @endif
+                                                    </span>)
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapse1" class="panel-collapse collapse">
+                                            <div class="panel-body" style="    background-color: #f6f6f6;">
+                                                <div class="listing">
+                                                    @if(is_object($unverifiedDatasets))
+                                                        @if($unverifiedDatasets->count() == 0)
+                                                            <p>No datasets found.</p>
+                                                        @endif
+
+                                                        <ol>
+                                                            <div class="owl-carousel owl-theme">
+                                                                @foreach($unverifiedDatasets as $dataset)
+                                                                    <li>
+                                                                        <div>
+                                                                            <b>{{$loop->index + 1}} .  </b> {{$dataset->title}}
+                                                                        </div>
+                                                                        @if($dataset->keywords->count() > 0)
+                                                                        <div class="keywords">
+                                                                            @foreach($keywords=$dataset->keywords as $_keyword)
+                                                                                <a href="{{route('keywords',['slug'=>$_keyword->slug])}}"> {{$_keyword->name}}</a>
+                                                                            @endforeach
+                                                                        </div>
+                                                                        @endif
+                                                                        <div class="item__footer">
+                                                                            <div class="authors">
+                                                                                <div>
+                                                                                    @foreach($authors=$dataset->authors as $author)
+                                                                                        @if($loop->last)
+                                                                                            {{$author->firstName[0]}}. {{$author->lastName}}
+                                                                                        @else
+                                                                                            {{$author->firstName[0]}}. {{$author->lastName}},
+                                                                                        @endif
+
+                                                                                    @endforeach
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="date">
+                                                                                <div><i class="mdi mdi-calendar"></i> {{$dataset->month ?? ''}} {{$dataset->year}}</div>
+                                                                                {{--                                                        <div><i class="mdi mdi-download"></i>{{$dataset->downloadCount}}</div>--}}
+                                                                                <div><a href="{{asset($dataset->file)}}" class="font-weight-600" target="_blank">Download <i class="mdi mdi-download"></i></a></div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                        <div>
+                                                                            <form method="post" action="{{route('datasets.verify',['id'=>$dataset->id])}}">
+                                                                                @csrf
+                                                                                <input class="btn btn-primary" style="background: #03a100; margin-top: 12px"  type="submit" value="Verify">
+                                                                            </form>
+                                                                        </div>
+                                                                    </li>
+                                                                @endforeach
+                                                            </div>
+                                                        </ol>
+                                                    @else
+                                                        <p>No publications found.</p>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div class="listing">
                                     <ol>
-                                        <a href="{{route('upload')}}" class="btn btn-primary" style="background: #03a100;" >Upload <i class="mdi mdi-arrow-up"></i></a>
+                                        <a href="{{route('upload')}}" class="btn btn-primary" style="background: #03a100;" >Upload Dataset <i class="mdi mdi-arrow-up"></i></a>
                                         <hr>
                                         @foreach($datasets as $dataset)
                                             <li>
                                                 <div>
                                                     <b>{{$loop->index + 1}} .  </b> {{$dataset->title}}
                                                 </div>
+                                                @if($dataset->keywords->count() > 0)
                                                 <div class="keywords">
                                                     @foreach($keywords=$dataset->keywords as $_keyword)
                                                         <a href="{{route('keywords',['slug'=>$_keyword->slug])}}"> {{$_keyword->name}}</a>
                                                     @endforeach
                                                 </div>
+                                                @endif
                                                 <div class="item__footer">
                                                     <div class="authors">
                                                         <div>

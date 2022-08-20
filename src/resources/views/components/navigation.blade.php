@@ -27,11 +27,9 @@
         <div class="recent-content-section">
             <p><a href="{{route('publications')}}" class="{{Request::is('publications')?'active':''}}">Publications</a></p>
             <p><a href="{{route('datasets')}}"  class="{{Request::is('datasets')?'active':''}}">Datasets</a></p>
-{{--            <p><a href="{{route('upload')}}"  class="{{Request::is('upload')?'active':''}}">Upload</a></p>--}}
-            <p><a href="{{route('projects')}}"  class="{{Request::is('projects')?'active':''}}">Projects & Outreach Programs</a></p>
-            <p><a href="#"></a></p>
-            <p><a href="#">Researchers</a></p>
-            <p><a href="#">Agriculture Directorate</a></p>
+            <p><a href="{{route('projects')}}"  class="{{Request::is('projects-and-outreach-programs')?'active':''}}">Projects & Outreach Programs</a></p>
+{{--            <p><a href="#">Staff</a></p>--}}
+            <p><a href="{{route('experts')}}" class="{{Request::is('experts')?'active':''}}">Experts</a></p>
         </div>
     </div>
 </div>

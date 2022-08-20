@@ -42,6 +42,7 @@ class Dataset extends Model
         'downloadCount',
         'file',
         'journal_id',
+        'verified',
     ];
 
     protected $hidden=[

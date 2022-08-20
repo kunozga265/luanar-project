@@ -18,7 +18,7 @@
 
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <label for="name" class="form-group">Name</label>
+                                            <label for="name" class="form-group">Name of Project or Consultancy</label>
                                             <input id="name" type="text" name="name"  class="form-control" required>
                                         </div>
                                         <div class="col-sm-12">

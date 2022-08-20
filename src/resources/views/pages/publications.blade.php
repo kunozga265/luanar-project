@@ -73,21 +73,99 @@
                                 </form>
                             </div>
                             <div class="single-event-text" style="padding:0; background-color: white">
+                                <div class="panel-group" id="accordion">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                                    Unverified Publications
+                                                    (<span>
+                                                        @if(is_object($unverifiedArticles))
+                                                            {{$unverifiedArticles->count()}}
+                                                        @else
+                                                            0
+                                                        @endif
+                                                    </span>)
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapse1" class="panel-collapse collapse">
+                                            <div class="panel-body" style="    background-color: #f6f6f6;">
+                                                <div class="listing">
+                                                    @if(is_object($unverifiedArticles))
+                                                        @if($unverifiedArticles->count() == 0)
+                                                            <p>No publications found.</p>
+                                                        @endif
+
+                                                        <ol>
+                                                            <div class="owl-carousel owl-theme">
+                                                                @foreach($unverifiedArticles as $article)
+                                                                    <li>
+                                                                        <div>
+                                                                            <b>{{$loop->index + 1}} .  </b> {{$article->title}}
+                                                                        </div>
+                                                                        @if($article->keywords->count() > 0)
+                                                                        <div class="keywords">
+                                                                            @foreach($keywords=$article->keywords as $_keyword)
+                                                                                <a href="{{route('keywords',['slug'=>$_keyword->slug])}}"> {{$_keyword->name}}</a>
+                                                                            @endforeach
+                                                                        </div>
+                                                                        @endif
+                                                                        <div class="item__footer">
+                                                                            <div class="authors">
+                                                                                <div>
+                                                                                    @foreach($authors=$article->authors as $author)
+                                                                                        @if($loop->last)
+                                                                                            {{$author->firstName[0]}}. {{$author->lastName}}
+                                                                                        @else
+                                                                                            {{$author->firstName[0]}}. {{$author->lastName}},
+                                                                                        @endif
+
+                                                                                    @endforeach
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="date">
+                                                                                <div><i class="mdi mdi-calendar"></i> {{$article->month ?? ''}} {{$article->year}}</div>
+                                                                                {{--                                                    <div><i class="mdi mdi-download"></i>{{$article->downloadCount}}</div>--}}
+                                                                                <div><a href="{{asset($article->file)}}" class="font-weight-600" target="_blank">Download <i class="mdi mdi-download"></i></a></div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                        <div>
+                                                                            <form method="post" action="{{route('publications.verify',['id'=>$article->id])}}">
+                                                                                @csrf
+                                                                                <input class="btn btn-primary" style="background: #03a100; margin-top: 12px"  type="submit" value="Verify">
+                                                                            </form>
+                                                                        </div>
+                                                                    </li>
+                                                                @endforeach
+                                                            </div>
+                                                        </ol>
+                                                    @else
+                                                        <p>No publications found.</p>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div class="listing">
                                     <ol>
-                                        <a href="{{route('upload')}}" class="btn btn-primary" style="background: #03a100;" >Upload <i class="mdi mdi-arrow-up"></i></a>
+                                        <a href="{{route('upload')}}" class="btn btn-primary" style="background: #03a100;" >Upload Publication <i class="mdi mdi-arrow-up"></i></a>
                                         <hr>
                                         @foreach($articles as $article)
                                         <li>
                                             <div>
                                                 <b>{{$loop->index + 1}} .  </b> {{$article->title}}
                                             </div>
+                                            @if($article->keywords->count() > 0)
                                             <div class="keywords">
                                                 @foreach($keywords=$article->keywords as $_keyword)
                                                     <a href="{{route('keywords',['slug'=>$_keyword->slug])}}"> {{$_keyword->name}}</a>
                                                 @endforeach
                                             </div>
+                                            @endif
                                             <div class="item__footer">
                                                 <div class="authors">
                                                     <div>
@@ -112,52 +190,6 @@
                                         </li>
                                         @endforeach
                                     </ol>
-                                   {{-- <div>
-                                        <p>All past and present publications from research and projects funded by CABMACC or any through PCO, can be accessed from this page.</p>
-                                        <p>
-                                            <b>Progress reports for CABMACC and Infrastructure Programmes (IDP)</b>
-                                        </p>
-                                        <ul>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/IDP%20Progress%20Report%20for%202017%20to%202018%20Revised%2018.08.2018.pdf">IDP Progress Report for 2017 to 2018 Revised 18.08.2018</a></li>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/2016%20-%2017%20Progress%20Report%20for%20IDP.pdf">2016 - 17 Progress Report for IDP</a></li>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/2016-17%20Progress%20report%20for%20CABMACC.pdf">2016-17 Progress report for CABMACC</a></li>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/CABMACC%20Progress%20Report%2025%20Sept%202016.pdf">CABMACC Progress Report 25 Sept 2016</a></li>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/2015%20IDP%20Annual%20Progress%20Report%20-%20Final%20submitted%20to%20RNE%20-%2017%20Aug%202015.pdf">2015 IDP Annual Progress Report - Final submitted to RNE - 17 Aug 2015</a></li>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/CABMACC%20Annual%20Progress%20Report%202014-15%20Final%20050815.pdf">CABMACC Annual Progress Report 2014-15 Final 050815</a></li>
-
-                                        </ul>
-
-                                        <p>Articles</p>
-                                        <ul>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/Tapp%20Newsletter.pdf">Tapp Newsletter (January-March,2016)</a></li>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/MAJANDS%20Vol%201%20Issue%201.pdf">MAJANDS Vol 1 Issue 1 (1 December 2015)</a></li>
-                                        </ul>
-
-                                        <p>
-                                            <b>Articles/publications by PhD/MSc students sponsored by CABMACC Programme.</b>
-                                        </p>
-                                        <ul>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/Cleaner%20Cooking%20Camp%202018%20pptx.pdf"><b>Experencia Madalitso Jalasi (2018) - presentation:</b> Investigating and Expanding Learning across  Activity System Boundaries in Improved Cook Stove  Innovation Diffusion and Adoption in Malawi</a></li>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/Experencia%20Jalasi%20final%20thesis.pdf"><b>Experencia Madalitso Jalasi (2018) - Dissertation</b>:  Investigating and Expanding Learning across  Activity System Boundaries in Improved Cook Stove  Innovation Diffusion and Adoption in Malawi </a></li>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/Geresomu%20Targeted%20Training%20Paper.pdf">Geresomo, et al  (2018): Targeting caregivers with context specific behavior change training </a></li>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/Kabambe%20-%20Productivity%20of%20pigeon%20pea%20and%20maize%20rotation%20system.pdf">Kabambe, et al(2018): Productivity of pigeon pea and maize rotation system in Balaka District</a></li>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/Kabambe%20-%20Productivity%20and%20profitability%20on%20groundnut%20and%20maize.pdf">Kabambe, et al(2018) : Productivity and profitability on groundnut and maize</a></li>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/Makwiza_Dissertation%20-%20Estimating%20outdoor%20water%20use%20allowing%20for%20the%20possible%20impacts%20of%20climate%20change.pdf"> Makwiza (2018) - Dissertation : Estimating outdoor water use allowing for the possible impacts of climate change </a></li>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/Makwiza%20-%20Estimating%20the%20impact%20of%20climate%20change.pdf">Makwiza, et al (2018)- Estimating the impact of climate change on residential water use using panel data analysis</a></li>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/Donga%20-%20Environmental%20load%20of%20pesticides%20used%20in%20conventional%20sugarcane%20production%20in%20Malawi%20(2018).pdf">Donga and Eklo (2018): Environmental load of pesticides used in conventional sugarcane production in Malawi</a></li>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/Limuwa%20-%20A%20GENDERED%20PERSPECTIVE%20ON%20THE%20FISH%20VALUE%20CHAIN.pdf">Limuwa (2018): A Gendered perspective on the fish value chain, livelihood patterns and coping strategies.</a></li>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/Limuwa%20et%20al.%202018%20-%20Evaluation%20of%20Small-Scale%20Fishers%E2%80%99%20Perceptions%20on%20Climate%20Change.pdf">Limuwa, et al. (2018): Evaluation of Small-Scale Fishers’ Perceptions on Climate Change and Their Coping Strategies.</a></li>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/Limuwa%20-%20sustainability%20fish%20farming.pdf">Limuwa, et al (2018): Is Fish Farming an Illusion for Lake Malawi Riparian Communities under Environmental Changes&#63;</a></li>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/Geresomu%20Riskfactors%20of%20stunting.pdf">Geresomo, et al (2017): Riskfactors of stunting</a></li>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/Geresomu%20Factors%20Affecting%20child%20feeding.pdf">Geresomo (2017) : Factors affecting child feeding</a></li>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/Makwiza%20-%20Sound%20recording%20to%20characterize%20outdoor%20tap%20water%20use%20events.pdf">Makwiza and Jacobs (2017) - Sound recording to characterize outdoor tap water use events </a></li>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/Makwiza%20-%20Assessing%20the%20impact%20of%20propertysizeon%20residential%20water.pdf">Makwiza and Jacobs (2016) - Assessing the impact of propertysizeon residential water use</a></li>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/Searching%20for%20Sustainable%20%20Solutions%20in%20Cook%20Stove%20Practice%20in%20Malawi%20%20A%20Cultural%20Historical%20Activity%20Theory%20Approach.pdf">Chisoni (2016): Searching for sustainable solutions in improved cookstove practice in Malawi</a></li>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/Makwiza%20-%20Correlating%20sound%20and%20flow%20rate%20at%20a%20tap.pdf">Makwiza, et al (2015) - Correlating sound and flow rate at a tap</a></li>
-                                            <li><a href="https://luanar.ac.mw/pco2/downloads/Makwiza%20-%20assess%20the%20possible%20impacts%20of%20climate%20change%20on%20domestic%20irrigation%20water%20use.pdf">Makwiza, et al (2015) - assess the possible impacts of climate change on domestic irrigation water use</a></li>
-
-                                        </ul>
-                                    </div>--}}
 
                                 </div>
 

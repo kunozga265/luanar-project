@@ -13,6 +13,7 @@ use App\Models\Dataset;
 use App\Models\Keyword;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -36,13 +37,14 @@ class DatasetController extends Controller
      */
     public function index()
     {
-        $datasets=Dataset::orderBy('title','ASC')->paginate((new AppController())->paginate);
+        $datasets=Dataset::where('verified',1)->orderBy('title','ASC')->paginate((new AppController())->paginate);
+        $unverifiedDatasets=Dataset::where('verified',0)->orderBy('title','ASC')->paginate((new AppController())->paginate);
         $keywords=Keyword::orderBy('name','asc')->get();
         //Search
         $authors=Author::orderBy('firstName','asc')->get();
         $types=Type::orderBy('name','asc')->get();
 
-        return view('pages.datasets',compact('datasets','keywords','authors','types'));
+        return view('pages.datasets',compact('datasets','unverifiedDatasets','keywords','authors','types'));
     }
 
     /**
@@ -217,5 +219,17 @@ class DatasetController extends Controller
         }
         else
             return response()->json([],404);
+    }
+
+    public function verify(Request $request,$id)
+    {
+        $dataset=Dataset::find($id);
+        if (is_object($dataset)){
+            $dataset->update([
+                'verified'  =>  true
+            ]);
+        }
+        return Redirect::route('datasets');
+
     }
 }

@@ -59,9 +59,9 @@
                                             <div class="panel-heading">
                                                 <h4 class="panel-title">
                                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                                                        Articles
+                                                        Publications
                                                         (<span>
-                                                        {{$keyword->articles->count()}}
+                                                        {{$keyword->articles()->where('verified',1)->count()}}
                                                     </span>)
                                                     </a>
                                                 </h4>
@@ -69,16 +69,16 @@
                                             <div id="collapse1" class="panel-collapse collapse">
                                                 <div class="panel-body">
                                                     <div class="listing">
-                                                            @if($keyword->articles->count() == 0)
-                                                                <p>No articles found.</p>
+                                                            @if($keyword->articles()->where('verified',1)->count() == 0)
+                                                                <p>No publications found.</p>
                                                             @endif
 
                                                             <ol>
 
-                                                                @foreach($articles=$keyword->articles as $article)
+                                                                @foreach($articles=$keyword->articles()->where('verified',1)->get() as $article)
                                                                     <li>
                                                                         <div>
-                                                                            <b>{{$loop->index + 1}} .  </b> {{$article->title}} (  <a href="{{asset($article->file)}}">{{asset($article->file)}}</a>)
+                                                                            <b>{{$loop->index + 1}} .  </b> {{$article->title}}
                                                                         </div>
                                                                         <div class="keywords">
                                                                             @foreach($keywords=$article->keywords as $_keyword)
@@ -100,8 +100,8 @@
                                                                             </div>
                                                                             <div class="date">
                                                                                 <div><i class="mdi mdi-calendar"></i> {{$article->month ?? ''}} {{$article->year}}</div>
-                                                                                <div><i class="mdi mdi-download"></i>{{$article->downloadCount}}</div>
-
+{{--                                                                                <div><i class="mdi mdi-download"></i>{{$article->downloadCount}}</div>--}}
+                                                                                <div><a href="{{asset($article->file)}}" class="font-weight-600" target="_blank">Download <i class="mdi mdi-download"></i></a></div>
                                                                             </div>
                                                                         </div>
                                                                         <hr>
@@ -118,7 +118,7 @@
                                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
                                                         Datasets
                                                         (<span>
-                                                      {{$keyword->datasets->count()}}
+                                                      {{$keyword->datasets()->where('verified',1)->count()}}
                                                     </span>)
                                                     </a>
                                                 </h4>
@@ -126,16 +126,16 @@
                                             <div id="collapse2" class="panel-collapse collapse">
                                                 <div class="panel-body">
                                                     <div class="listing">
-                                                            @if($keyword->datasets->count() == 0)
+                                                            @if($keyword->datasets()->where('verified',1)->count() == 0)
                                                                 <p>No datasets found.</p>
                                                             @endif
 
                                                             <ol>
 
-                                                                @foreach($datasets=$keyword->datasets as $dataset)
+                                                                @foreach($datasets=$keyword->datasets()->where('verified',1)->get() as $dataset)
                                                                     <li>
                                                                         <div>
-                                                                            <b>{{$loop->index + 1}} .  </b> {{$dataset->title}} (  <a href="{{asset($dataset->file)}}">{{asset($dataset->file)}}</a>)
+                                                                            <b>{{$loop->index + 1}} .  </b> {{$dataset->title}}
                                                                         </div>
                                                                         <div class="keywords">
                                                                             @foreach($keywords=$dataset->keywords as $_keyword)
@@ -157,8 +157,8 @@
                                                                             </div>
                                                                             <div class="date">
                                                                                 <div><i class="mdi mdi-calendar"></i> {{$dataset->month ?? ''}} {{$dataset->year}}</div>
-                                                                                <div><i class="mdi mdi-download"></i>{{$dataset->downloadCount}}</div>
-
+{{--                                                                                <div><i class="mdi mdi-download"></i>{{$dataset->downloadCount}}</div>--}}
+                                                                                <div><a href="{{asset($dataset->file)}}" class="font-weight-600" target="_blank">Download <i class="mdi mdi-download"></i></a></div>
                                                                             </div>
                                                                         </div>
                                                                         <hr>
