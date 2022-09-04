@@ -219,6 +219,25 @@
     <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/background3.css')}}" title="background3" media="screen" />
     <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/background4.css')}}" title="background4" media="screen" />
     <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/background5.css')}}" title="background5" media="screen" />
+    <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker.css')}}" />
+
+    @livewireStyles
+
+
+    <!-- jquery
+    ============================================ -->
+    <script src="{{asset('js/vendor/jquery-1.12.4.min.js')}}"></script>
+    <script src="{{asset('js/jquery-ui.js')}}"></script>
+
+    <!-- bootstrap JS
+    ============================================ -->
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            $('.datepicker').datepicker();
+        });
+    </script>
 </head>
 <!-- Load font awesome icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -667,15 +686,11 @@
 </div>
 <!--End of Main Wrapper Area-->
 
+@livewireScripts
 
-<!-- jquery
-============================================ -->
-<script src="{{asset('js/vendor/jquery-1.12.4.min.js')}}"></script>
 
-<!-- bootstrap JS
-============================================ -->
-<script src="{{asset('js/bootstrap.min.js')}}"></script>
 
+@stack('scripts')
 <!-- nivo slider js
 ============================================ -->
 <script src="{{asset('lib/nivo-slider/js/jquery.nivo.slider.js')}}" type="text/javascript"></script>
@@ -685,7 +700,7 @@
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
 <script>
-    function initialize() {
+/*    function initialize() {
         var mapOptions = {
             zoom: 15,
             scrollwheel: false,
@@ -705,8 +720,10 @@
 
     }
 
-    google.maps.event.addDomListener(window, 'load', initialize);
+    google.maps.event.addDomListener(window, 'load', initialize);*/
 </script>
+
+
 
 <!-- meanmenu JS
 ============================================ -->

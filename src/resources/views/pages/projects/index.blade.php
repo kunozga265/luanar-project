@@ -174,6 +174,23 @@
                                                                                 <p>{{$project->startDate??""}}{{$project->endDate?"-$project->endDate":""}} {{$project->duration?"($project->duration)":""}}</p>
                                                                                 <p>Funder: {{$project->donor->name}}</p>
                                                                             </div>
+
+                                                                            <div>
+                                                                                <table>
+                                                                                    <tr>
+                                                                                        <th>No.</th>
+                                                                                        <th>Deliverable</th>
+                                                                                        <th>Date</th>
+                                                                                    </tr>
+                                                                                    @foreach($deliverables=json_decode($project->deliverables) as $key=>$value)
+                                                                                    <tr>
+                                                                                        <td>{{$key +1}}</td>
+                                                                                        <td>{{$value->title}}</td>
+                                                                                        <td>{{"$value->day/$value->month/$value->year"}}</td>
+                                                                                    </tr>
+                                                                                    @endforeach
+                                                                                </table>
+                                                                            </div>
                                                                             <div>
                                                                                 <form method="post" action="{{route('projects.verify',['id'=>$project->id])}}">
                                                                                     @csrf
@@ -230,6 +247,23 @@
                                                         <p>Project Cost: {{$project->currency}}{{number_format($project->budget)}}</p>
                                                         <p>{{$project->startDate??""}}{{$project->endDate?"-$project->endDate":""}} {{$project->duration?"($project->duration)":""}}</p>
                                                         <p>Funder: {{$project->donor->name}}</p>
+                                                    </div>
+
+                                                    <div>
+                                                        <table>
+                                                            <tr>
+                                                                <th>No.</th>
+                                                                <th>Deliverable</th>
+                                                                <th>Date</th>
+                                                            </tr>
+                                                            @foreach($deliverables=json_decode($project->deliverables) as $key=>$value)
+                                                                <tr>
+                                                                    <td>{{$key +1}}</td>
+                                                                    <td>{{$value->title}}</td>
+                                                                    <td>{{"$value->day/$value->month/$value->year"}}</td>
+                                                                </tr>
+                                                            @endforeach
+                                                        </table>
                                                     </div>
                                                 </div>
                                             </div>

@@ -25,6 +25,7 @@ class ProjectsTableSeeder extends Seeder
             "budget"            => 3400,
             "author_id"         => 19,
             "donor_id"          => 1,
+            "deliverables"      => json_encode([]),
         ]);
         $project->collaborators()->attach([5,7]);
 
@@ -39,6 +40,7 @@ class ProjectsTableSeeder extends Seeder
             "budget"            => 6000000,
             "author_id"         => 23,
             "donor_id"          => 2,
+            "deliverables"      => json_encode([]),
         ]);
 
         Project::create([
@@ -52,6 +54,7 @@ class ProjectsTableSeeder extends Seeder
             "budget"            => 157000000,
             "author_id"         => 19,
             "donor_id"          => 2,
+            "deliverables"      => json_encode([]),
         ]);
 
         Project::create([
@@ -65,6 +68,7 @@ class ProjectsTableSeeder extends Seeder
             "budget"            => 50000000,
             "author_id"         => 18,
             "donor_id"          => 1,
+            "deliverables"      => json_encode([]),
         ]);
 
         Project::create([
@@ -78,6 +82,7 @@ class ProjectsTableSeeder extends Seeder
             "budget"            => 200000,
             "author_id"         => 19,
             "donor_id"          => 3,
+            "deliverables"      => json_encode([]),
         ]);
 
         Project::create([
@@ -91,6 +96,7 @@ class ProjectsTableSeeder extends Seeder
             "budget"            => 15000000,
             "author_id"         => 22,
             "donor_id"          => 1,
+            "deliverables"      => json_encode([]),
         ]);
 
         Project::create([
@@ -104,6 +110,7 @@ class ProjectsTableSeeder extends Seeder
             "budget"            => 14000,
             "author_id"         => 19,
             "donor_id"          => 4,
+            "deliverables"      => json_encode([]),
         ]);
 
         Project::create([
@@ -117,6 +124,7 @@ class ProjectsTableSeeder extends Seeder
             "budget"            => 14000,
             "author_id"         => 20,
             "donor_id"          => 5,
+            "deliverables"      => json_encode([]),
         ]);
 
         Project::create([
@@ -130,6 +138,7 @@ class ProjectsTableSeeder extends Seeder
             "budget"            => 345000,
             "author_id"         => 21,
             "donor_id"          => 6,
+            "deliverables"      => json_encode([]),
         ]);
     }
 }

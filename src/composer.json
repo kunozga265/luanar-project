@@ -7,14 +7,15 @@
     "require": {
         "php": "^7.3|^8.0",
         "ext-json": "*",
+        "ext-pdo": "*",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/scout": "^9.4",
         "laravel/tinker": "^2.5",
-        "teamtnt/laravel-scout-tntsearch-driver": "^11.6",
-        "ext-pdo": "*"
+        "livewire/livewire": "^2.10",
+        "teamtnt/laravel-scout-tntsearch-driver": "^11.6"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

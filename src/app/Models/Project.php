@@ -38,5 +38,6 @@ class Project extends Model
         "verified",
         "author_id",
         "donor_id",
+        "deliverables",
     ];
 }

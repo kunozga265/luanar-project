@@ -2928,3 +2928,11 @@ span.c-text {display: inline-block;}
 
 }
 
+.btn-error{
+    background: #cb0b3c;
+    color:white;
+}
+
+.text-danger.error{
+    font-size: 14px;
+}

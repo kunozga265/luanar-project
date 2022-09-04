@@ -26,6 +26,7 @@ class CreateProjectsTable extends Migration
             $table->boolean('verified')->default(0);
             $table->integer("author_id");
             $table->integer("donor_id");
+            $table->json("deliverables")->nullable();
             $table->timestamps();
         });
     }

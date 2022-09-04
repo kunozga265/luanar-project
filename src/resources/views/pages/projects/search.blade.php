@@ -96,7 +96,7 @@
                                                     <div class="header">
                                                         <h4>{{strtoupper($project->name)}}</h4>
                                                         <p class="font-weight-600" style="margin-bottom: {{$project->collaborators->count()>0?'0':'10px'}}">P.I.:
-                                                            <a href="#">{{$project->author->title}} {{$project->author->firstName}} {{$project->author->middleName}} {{$project->author->lastName}}</a></p>
+                                                            <a href="{{route('experts.show',['id'=>$project->author->id])}}">{{$project->author->title}} {{$project->author->firstName}} {{$project->author->middleName}} {{$project->author->lastName}}</a></p>
                                                         @if($project->collaborators->count()>0)
                                                             <p class="font-weight-600">Collaborators:
                                                                 @foreach($project->collaborators as $collaborator)
@@ -117,6 +117,23 @@
                                                         <p>Project Cost: {{$project->currency}}{{number_format($project->budget)}}</p>
                                                         <p>{{$project->startDate??""}}{{$project->endDate?"-$project->endDate":""}} {{$project->duration?"($project->duration)":""}}</p>
                                                         <p>Funder: {{$project->donor->name}}</p>
+                                                    </div>
+
+                                                    <div>
+                                                        <table>
+                                                            <tr>
+                                                                <th>No.</th>
+                                                                <th>Deliverable</th>
+                                                                <th>Date</th>
+                                                            </tr>
+                                                            @foreach($deliverables=json_decode($project->deliverables) as $key=>$value)
+                                                                <tr>
+                                                                    <td>{{$key +1}}</td>
+                                                                    <td>{{$value->title}}</td>
+                                                                    <td>{{"$value->day/$value->month/$value->year"}}</td>
+                                                                </tr>
+                                                            @endforeach
+                                                        </table>
                                                     </div>
                                                 </div>
                                             </div>
