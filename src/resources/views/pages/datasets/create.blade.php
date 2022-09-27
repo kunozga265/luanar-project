@@ -18,12 +18,6 @@
                                     <h4>Create Dataset</h4>
 
                                     <div class="row">
-                                        {{--<div class="col-sm-12">
-                                            <label for="article" class="form-group">Publication</label>
-                                            <input id="article" type="radio" name="kind" value="article" checked>
-                                            <label for="dataset" class="form-group">Dataset</label>
-                                            <input id="dataset" type="radio" name="kind" value="dataset">
-                                        </div>--}}
                                         <div class="col-sm-12">
                                             <label for="title" class="form-group">Title</label>
                                             <input id="title" type="text" name="title"  class="form-control" required>
@@ -35,7 +29,6 @@
                                         <div class="col-sm-12">
                                             <label for="authors" class="form-group">Select Authors</label>
                                             <select id="authors" name="authors[]" class="form-control" multiple="multiple" >
-{{--                                                <option value="">Select Author</option>--}}
                                                 @foreach($authors as $author)
                                                     <option value="{{$author->id}}">{{$author->firstName}} {{$author->middleName}} {{$author->lastName}}</option>
                                                 @endforeach

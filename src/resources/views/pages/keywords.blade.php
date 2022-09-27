@@ -17,27 +17,9 @@
                                 <div class="searchSection">
                                     <h4>Keywords {{is_object($keyword)?": ".$keyword->name:""}}</h4>
 
-                                {{--    <div class="search-field">
-
-                                        <label for="keywords" class="form-group">By Keywords</label>
-                                        <div class="field">
-                                            <i style="" class="fa fa-search"></i>
-                                            <input type="text" id="keywords" name="keywords" class="form-control" style="">
-                                        </div>
-
-                                    </div>--}}
-
                                     <div class="keywords" style="margin-top: 12px">
                                         <div class="row">
                                             <div class="col-md-12">
-{{--                                                <label for="type" class="form-group">Keywords</label>--}}
-                                             {{--   <select name="type" id="type" class="form-control">
-                                                    @foreach($keywords as $_keyword)
-                                                        <option value="{{$_keyword->slug}}">
-                                                            <a href="{{route('keywords',['slug'=>$_keyword->slug])}}"> {{$_keyword->name}}</a>
-                                                        </option>
-                                                    @endforeach
-                                                </select>--}}
                                                 @foreach($keywords as $_keyword)
                                                     @if($slug === $_keyword->slug)
                                                         <a class="active" href="{{route('keywords',['slug'=>$_keyword->slug])}}"> {{$_keyword->name}}</a>

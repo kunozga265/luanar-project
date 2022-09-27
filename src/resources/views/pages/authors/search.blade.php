@@ -26,47 +26,6 @@
 
                                     </div>
 
-                                  {{--  <div class="search-filters">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <label for="authors" class="form-group">By Principle Investigator</label>
-                                                <select id="authors" name="author" class="form-control">
-                                                    <option value="">Select Author</option>
-                                                    @foreach($authors as $author)
-                                                        <option value="{{$author->id}}">{{$author->firstName}} {{$author->middleName}} {{$author->lastName}}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                            <div class="col-md-4 col-sm-6">
-                                                <label for="donor" class="form-group">By Donor</label>
-                                                <select name="donor" id="donor" class="form-control">
-                                                    <option value="">Select Donor</option>
-                                                    @foreach($donors as $donor)
-                                                        <option value="{{$donor->id}}">{{$donor->name}}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                            <div class="col-md-4 col-sm-6">
-                                                <label for="sort" class="form-group">Sort By</label>
-                                                <div class="row">
-                                                    <div class="col-sm-6" style="padding-right: 5px">
-                                                        <select name="sort" id="sort" class="form-control">
-                                                            <option value="name">Name</option>
-                                                            <option value="budget">Budget</option>
-                                                            <option value="startDate">Start Date</option>
-                                                            <option value="endDate">End Date</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-sm-6" style="padding-left: 5px">
-                                                        <select name="order" id="sort" class="form-control">
-                                                            <option value="asc" >Ascending</option>
-                                                            <option value="desc" >Descending</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>--}}
                                     <div style="text-align: center; margin-top: 10px">
                                         <input class="btn btn-primary" style="background: #03a100;"  type="submit" value="Search">
                                     </div>

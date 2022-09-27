@@ -21,7 +21,6 @@
 
                                         <label for="title" class="form-group">By Title</label>
                                         <div class="field">
-{{--                                            <i style="" class="fa fa-search"></i>--}}
                                             <input type="text" id="title" name="title" class="form-control" style="">
                                         </div>
 

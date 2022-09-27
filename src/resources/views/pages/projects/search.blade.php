@@ -20,7 +20,6 @@
 
                                         <label for="title" class="form-group">By Name</label>
                                         <div class="field">
-{{--                                            <i style="" class="fa fa-search"></i>--}}
                                             <input type="text" id="title" name="name" class="form-control" style="" value="{{$name??''}}">
                                         </div>
 
