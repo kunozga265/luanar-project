@@ -12,7 +12,7 @@
                     <div class="event-details-content">
                         <div class="single-event-item" style="padding:0">
                             <div class="single-event-image" style="border-bottom: 1px solid #e1e1e1;">
-                                <form method="post" action="{{route('projects.search')}}" class="searchSection projectsSearchSection image-placeholder">
+                                <form method="post" action="{{route('projects.search')}}" class="searchSection image-placeholder">
                                     @csrf
                                     <h4>Search</h4>
 

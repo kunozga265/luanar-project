@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\Article;
 use App\Models\Author;
 use App\Models\Donor;
 use App\Models\Project;
@@ -122,6 +123,22 @@ class ProjectController extends Controller
 //        else
             return Redirect::route('projects');
 
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     */
+    public function trash($id)
+    {
+        $project=Project::find($id);
+        if (is_object($project)){
+            $project->delete();
+            return Redirect::back();
+        }
+        else
+            return Redirect::back();
     }
 }
 

@@ -27,6 +27,7 @@ class CreateProjectsTable extends Migration
             $table->integer("author_id");
             $table->integer("donor_id");
             $table->json("deliverables")->nullable();
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });
     }

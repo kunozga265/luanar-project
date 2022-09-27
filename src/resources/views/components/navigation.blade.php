@@ -25,11 +25,13 @@
      </div>--}}
     <div class="recent-content-section">
         <div class="recent-content-section">
-            <p><a href="{{route('publications')}}" class="{{Request::is('publications')?'active':''}}">Publications</a></p>
-            <p><a href="{{route('datasets')}}"  class="{{Request::is('datasets')?'active':''}}">Datasets</a></p>
+            <p><a href="{{route('articles')}}" class="{{Request::is('publications') || Request::is('publications/new')?'active':''}}">Publications</a></p>
+            <p><a href="{{route('datasets')}}"  class="{{Request::is('datasets')|| Request::is('datasets/new')?'active':''}}">Datasets</a></p>
             <p><a href="{{route('projects')}}"  class="{{Request::is('projects-and-outreach-programs')?'active':''}}">Projects & Outreach Programs</a></p>
 {{--            <p><a href="#">Staff</a></p>--}}
             <p><a href="{{route('experts')}}" class="{{Request::is('experts')?'active':''}}">Experts</a></p>
+            <p><a href="{{route('journals')}}" class="{{Request::is('journals')?'active':''}}">Journals</a></p>
+            <p><a href="{{route('donors')}}" class="{{Request::is('donors')?'active':''}}">Donors</a></p>
         </div>
     </div>
 </div>

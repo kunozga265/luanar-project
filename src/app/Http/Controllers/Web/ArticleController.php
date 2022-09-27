@@ -8,6 +8,7 @@ use App\Http\Resources\V1\ArticleCollection;
 use App\Http\Resources\V1\ArticleResource;
 use App\Models\Article;
 use App\Models\Author;
+use App\Models\Journal;
 use App\Models\Keyword;
 use App\Models\Type;
 use Illuminate\Http\Request;
@@ -45,7 +46,7 @@ class ArticleController extends Controller
         $authors=Author::orderBy('firstName','asc')->get();
         $types=Type::orderBy('name','asc')->get();
 
-        return view('pages.publications',compact('articles','unverifiedArticles','keywords','authors','types'));
+        return view('pages.articles.index',compact('articles','unverifiedArticles','keywords','authors','types'));
     }
 
     /**
@@ -60,38 +61,61 @@ class ArticleController extends Controller
 
     }
 
+    public function create()
+    {
+        //Search
+        $authors=Author::orderBy('firstName','asc')->get();
+        $types=Type::orderBy('name','asc')->get();
+        $journals=Journal::orderBy('title','asc')->get();
+        $years=[];
+        $keywords=Keyword::orderBy('name','asc')->get();
+
+        $currentYear = intval(date('Y'));
+        $year=1990;
+        while ($year <= $currentYear) {
+            $years[]=$year;
+            $year++;
+        }
+        $years=array_reverse($years);
+
+        return view('pages.articles.create',compact('keywords','authors','types','journals','years'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
     {
-        Validator::make($request->all(),[
-            'title'     =>  'required',
-            'file'      =>  'required',
+
+        Validator::make($request->all(), [
+            'title'             =>  ['required'],
+            'file'              =>  ['required'],
         ])->validate();
 
-        $slug="articles/".Str::slug($request->title).date("-Y-m-d");
-        $file=(new AppController)->uploadFile($slug,$request->file);
+
+        $fileName=Str::slug($request->title)."-".uniqid().".".$request->file->extension();
+        $request->file->move(public_path('files/articles'), $fileName);
 
         $article=Article::create([
-            'file'          =>  $file,
-            'title'         =>  $request->title,
-            'year'          =>  $request->year,
-            'abstract'      =>  $request->abstract,
-            'downloadCount' =>  0,
-            'journal_id'    =>  $request->journalId,
+            'title'             =>  $request->title,
+            'abstract'          =>  $request->abstract,
+            'journal_id'        =>  $request->journal,
+            'type_id'           =>  $request->type,
+            'year'              =>  $request->year,
+            'file'              =>  'files/articles/'.$fileName,
         ]);
 
         //Attach Keywords
-        (new AppController())->attachKeywords($article,$request->keywords);
+        $keywords=explode(',',$request->keywords);
+        (new AppController())->attachKeywords($article,$keywords);
 
         //Attach Authors
         (new AppController())->attachAuthors($article,$request->authors);
 
-        return response()->json(new ArticleResource($article),201);
+        return Redirect::route('articles');
+
     }
 
     /**
@@ -164,17 +188,16 @@ class ArticleController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\JsonResponse
      */
     public function trash($id)
     {
         $article=Article::find($id);
         if (is_object($article)){
             $article->delete();
-            return response()->json([]);
+            return Redirect::back();
         }
         else
-            return response()->json([],404);
+            return Redirect::back();
     }
 
     /**
@@ -230,7 +253,7 @@ class ArticleController extends Controller
                 'verified'  =>  true
             ]);
         }
-        return Redirect::route('publications');
+        return Redirect::route('articles');
 
     }
 }

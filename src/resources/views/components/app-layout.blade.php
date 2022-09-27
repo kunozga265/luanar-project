@@ -219,7 +219,7 @@
     <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/background3.css')}}" title="background3" media="screen" />
     <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/background4.css')}}" title="background4" media="screen" />
     <link rel="alternate stylesheet" type="text/css" href="{{asset('switcher/background5.css')}}" title="background5" media="screen" />
-    <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker.css')}}" />
+{{--    <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker.css')}}" />--}}
 
     @livewireStyles
 
@@ -233,11 +233,11 @@
     ============================================ -->
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
-    <script type="text/javascript">
+{{--    <script type="text/javascript">
         $(function() {
             $('.datepicker').datepicker();
         });
-    </script>
+    </script>--}}
 </head>
 <!-- Load font awesome icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

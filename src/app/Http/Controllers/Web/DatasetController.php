@@ -10,6 +10,7 @@ use App\Http\Resources\V1\DatasetResource;
 use App\Models\Article;
 use App\Models\Author;
 use App\Models\Dataset;
+use App\Models\Journal;
 use App\Models\Keyword;
 use App\Models\Type;
 use Illuminate\Http\Request;
@@ -44,7 +45,7 @@ class DatasetController extends Controller
         $authors=Author::orderBy('firstName','asc')->get();
         $types=Type::orderBy('name','asc')->get();
 
-        return view('pages.datasets',compact('datasets','unverifiedDatasets','keywords','authors','types'));
+        return view('pages.datasets.index',compact('datasets','unverifiedDatasets','keywords','authors','types'));
     }
 
     /**
@@ -58,39 +59,63 @@ class DatasetController extends Controller
         return response()->json(new DatasetCollection($datasets));
 
     }
+    public function create()
+    {
+        //Search
+        $authors=Author::orderBy('firstName','asc')->get();
+        $types=Type::orderBy('name','asc')->get();
+        $journals=Journal::orderBy('title','asc')->get();
+        $years=[];
+        $keywords=Keyword::orderBy('name','asc')->get();
+
+        $currentYear = intval(date('Y'));
+        $year=1990;
+        while ($year <= $currentYear) {
+            $years[]=$year;
+            $year++;
+        }
+        $years=array_reverse($years);
+
+        return view('pages.datasets.create',compact('keywords','authors','types','journals','years'));
+    }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
     {
-        Validator::make($request->all(),[
-            'title'     =>  'required',
-            'file'      =>  'required',
+
+        Validator::make($request->all(), [
+            'title'             =>  ['required'],
+            'file'              =>  ['required'],
         ])->validate();
 
-        $slug="datasets/".Str::slug($request->title).date("-Y-m-d");
-        $file=(new AppController)->uploadFile($slug,$request->file);
+
+        $fileName=Str::slug($request->title)."-".uniqid().".".$request->file->extension();
+        $request->file->move(public_path('files/datasets'), $fileName);
 
         $dataset=Dataset::create([
-            'file'          =>  $file,
-            'title'         =>  $request->title,
-            'year'          =>  $request->year,
-            'abstract'      =>  $request->abstract,
-            'downloadCount' =>  0,
-            'journal_id'    =>  $request->journalId,
+            'title'             =>  $request->title,
+            'abstract'          =>  $request->abstract,
+            'journal_id'        =>  $request->journal,
+            'type_id'           =>  $request->type,
+            'year'              =>  $request->year,
+            'file'              =>  'files/datasets/'.$fileName,
         ]);
 
         //Attach Keywords
-        (new AppController())->attachKeywords($dataset,$request->keywords);
+        if (isset($request->keywords)) {
+            $keywords = explode(',', $request->keywords);
+            (new AppController())->attachKeywords($dataset, $keywords);
+        }
 
         //Attach Authors
         (new AppController())->attachAuthors($dataset,$request->authors);
 
-        return response()->json(new DatasetResource($dataset),201);
+        return Redirect::route('datasets');
+
     }
 
     /**
@@ -163,17 +188,16 @@ class DatasetController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\JsonResponse
      */
     public function trash($id)
     {
         $dataset=Dataset::find($id);
         if (is_object($dataset)){
             $dataset->delete();
-            return response()->json([]);
+            return Redirect::back();
         }
         else
-            return response()->json([],404);
+            return Redirect::back();
     }
 
     /**

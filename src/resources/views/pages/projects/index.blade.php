@@ -191,10 +191,14 @@
                                                                                     @endforeach
                                                                                 </table>
                                                                             </div>
-                                                                            <div>
+                                                                            <div style="display: flex">
                                                                                 <form method="post" action="{{route('projects.verify',['id'=>$project->id])}}">
                                                                                     @csrf
-                                                                                    <input class="btn btn-primary" style="background: #03a100; margin-top: 12px"  type="submit" value="Verify">
+                                                                                    <input class="btn btn-primary" style="background: #03a100; margin-right: 6px"  type="submit" value="Verify">
+                                                                                </form>
+                                                                                <form method="post" action="{{route('projects.trash',['id'=>$project->id])}}">
+                                                                                    @csrf
+                                                                                    <input class="btn btn-primary" style="background: #cb0b3c;" type="submit" value="Delete">
                                                                                 </form>
                                                                             </div>
                                                                         </div>
