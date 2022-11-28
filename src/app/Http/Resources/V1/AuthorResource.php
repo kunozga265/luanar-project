@@ -21,8 +21,10 @@ class AuthorResource extends JsonResource
           'middleName'      =>  $this->middleName,
           'lastName'        =>  $this->lastName,
           'biography'       =>  $this->biography,
-          'articles'        =>  $this->articles,
-          'datasets'        =>  $this->datasets,
+          'articles'        =>  $this->articles()->where('verified',1)->get(),
+          'datasets'        =>  $this->datasets()->where('verified',1)->get(),
+          'collaborations'  =>  $this->collaborations()->where('verified',1)->get(),
+          'projects'        =>  $this->projects()->where('verified',1)->get(),
         ];
     }
 }
