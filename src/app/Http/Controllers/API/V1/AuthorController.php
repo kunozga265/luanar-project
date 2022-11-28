@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API\V1;
 
+use App\Http\Controllers\AppController;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\AuthorCollection;
 use App\Http\Resources\V1\AuthorResource;
@@ -22,7 +23,11 @@ class AuthorController extends Controller
      */
     public function search($query)
     {
-        $authors=Author::search($query)->paginate((new AppController())->paginate);
+        $authors=Author::where('firstName', 'like', '%' .$query. '%')
+            ->orWhere('middleName', 'like', '%' .$query. '%')
+            ->orWhere('lastName', 'like', '%' .$query. '%')
+            ->orderBy('lastName','asc')->paginate((new AppController())->paginate);
+//        $authors=Author::search($query)->paginate((new AppController())->paginate);
         return response()->json(new AuthorCollection($authors));
     }
 
