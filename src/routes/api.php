@@ -5,6 +5,7 @@ use App\Http\Controllers\API\V1\ArticleController;
 use App\Http\Controllers\API\V1\AuthorController;
 use App\Http\Controllers\API\V1\DatasetController;
 use App\Http\Controllers\API\V1\JournalController;
+use App\Http\Controllers\API\V1\ProjectController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -464,6 +465,31 @@ Route::group(['prefix'=>'v1'],function (){
         */
         Route::delete('/destroy/{id}',[JournalController::class,'destroy']);
 
+    });
+
+    Route::group(['prefix'=>'projects'],function () {
+        /*
+       |-------------------------------------------------------------------------------
+       | Searches projects
+       |-------------------------------------------------------------------------------
+       | URL:              /api/v1/projects/search/{query}
+       | Method:           GET
+       | Controller:       API\V1\ProjectController
+       | Parameters:       query -> string being searched for
+       | Response Body:    Project objects with collaborators
+       */
+        Route::get('/search/{query}', [ProjectController::class, 'search']);
+
+        /*
+        |-------------------------------------------------------------------------------
+        | Gets all the projects
+        |-------------------------------------------------------------------------------
+        | URL:              /api/v1/projects
+        | Method:           GET
+        | Controller:       API\V1\ProjectController
+        | Response Body:    Project objects with collaborators
+        */
+        Route::get('/', [ProjectController::class, 'index']);
     });
 
 });
