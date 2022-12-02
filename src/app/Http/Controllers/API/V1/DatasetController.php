@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API\V1;
 
+use App\Http\Controllers\AppController;
 use App\Http\Controllers\Controller;
 
 use App\Http\Resources\V1\DatasetCollection;
@@ -23,7 +24,9 @@ class DatasetController extends Controller
      */
     public function search($query)
     {
-        $datasets=Dataset::search($query)->paginate((new AppController())->paginate);
+//        $datasets=Dataset::search($query)->paginate((new AppController())->paginate);
+        $datasets=Dataset::where('title', 'like', '%' .$query. '%')
+            ->orderBy('title','asc')->paginate((new AppController())->paginate);
         return response()->json(new DatasetCollection($datasets));
     }
 

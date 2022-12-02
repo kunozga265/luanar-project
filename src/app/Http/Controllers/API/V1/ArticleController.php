@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API\V1;
 
+use App\Http\Controllers\AppController;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\ArticleCollection;
 use App\Http\Resources\V1\ArticleResource;
@@ -23,7 +24,9 @@ class ArticleController extends Controller
      */
     public function search($query)
     {
-        $articles=Article::search($query)->paginate((new AppController())->paginate);
+//        $articles=Article::search($query)->paginate((new AppController())->paginate);
+        $articles=Article::where('title', 'like', '%' .$query. '%')
+            ->orderBy('title','asc')->paginate((new AppController())->paginate);
         return response()->json(new ArticleCollection($articles));
     }
 
