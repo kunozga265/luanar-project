@@ -26,6 +26,7 @@ class DatasetController extends Controller
     {
 //        $datasets=Dataset::search($query)->paginate((new AppController())->paginate);
         $datasets=Dataset::where('title', 'like', '%' .$query. '%')
+            ->where('verified',1)
             ->orderBy('title','asc')->paginate((new AppController())->paginate);
         return response()->json(new DatasetCollection($datasets));
     }
@@ -37,7 +38,7 @@ class DatasetController extends Controller
      */
     public function index()
     {
-        $datasets=Dataset::orderBy('title','ASC')->paginate((new AppController())->paginate);
+        $datasets=Dataset::orderBy('title','ASC')->where('verified',1)->paginate((new AppController())->paginate);
         return response()->json(new DatasetCollection($datasets));
     }
 

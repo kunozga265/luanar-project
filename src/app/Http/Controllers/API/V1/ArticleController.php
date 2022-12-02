@@ -26,6 +26,7 @@ class ArticleController extends Controller
     {
 //        $articles=Article::search($query)->paginate((new AppController())->paginate);
         $articles=Article::where('title', 'like', '%' .$query. '%')
+            ->where('verified',1)
             ->orderBy('title','asc')->paginate((new AppController())->paginate);
         return response()->json(new ArticleCollection($articles));
     }
@@ -37,7 +38,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles=Article::orderBy('title','ASC')->paginate((new AppController())->paginate);
+        $articles=Article::orderBy('title','ASC')->where('verified',1)->paginate((new AppController())->paginate);
         return response()->json(new ArticleCollection($articles));
     }
 
